@@ -1,0 +1,25 @@
+.navbar{
+    display: flex;
+    position: sticky;
+    width: 100%;
+    top: 0;
+    margin-bottom: 50px;
+    height: 80px;
+    z-index: 9999;
+    background-color: white;
+}
+.ul-navbar{
+    display: flex;
+    margin-left: 30vw;
+}
+.ul-navbar li{
+    display: flex;
+    margin: auto 15px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    
+}
+
+.ul-navbar li:hover{
+    font-weight: bold;
+}
