@@ -1,0 +1,29 @@
+
+
+.ul-pedidos{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+.ul-pedidos li{
+    display: flex;
+    flex-direction: column;
+    margin-right: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.pedidosScreen{
+    margin-left: 20px;
+}
+
+
+
+.detallesPedidos{
+    display: flex;
+}
+.detallesPedidos h3,p{
+    margin-right: 20px;
+    width:180px;
+}
+.detallesPedidos span{
+    font-weight: bold;
+}

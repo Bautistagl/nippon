@@ -1,0 +1,62 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 50px;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+.card img{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.card span{
+    margin: 0;
+}
+.card h2{
+    font-weight: lighter;
+    margin: 15px 0px;
+   
+}
+.info-cards-landing{
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    margin-bottom: 10px;
+}
+.card button{
+    height: auto;
+    width: 100%;
+    padding: 5px;
+    border-radius: 50px;
+    background-color: transparent;
+    border: 3px solid white;
+    color: white;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.contenedor-cards{
+    display: flex;
+    width: 80%;
+    margin: auto;
+}
+.botonera-cantidad{
+    display: flex;
+    justify-content: center;
+}
+.botonera-cantidad button{
+    margin: 10px !important;
+}
+.botonera-cantidad div{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+}
+@media only screen and (max-width: 550px) {
+    .contenedor-cards{
+       flex-direction: column;
+    }
+}

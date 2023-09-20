@@ -3,14 +3,17 @@
     position: sticky;
     width: 100%;
     top: 0;
-    margin-bottom: 50px;
     height: 80px;
     z-index: 9999;
-    background-color: white;
+    background-color: #315253;
+    color: white;
+    border-bottom: 2px solid white;
+
 }
 .ul-navbar{
     display: flex;
     margin-left: 30vw;
+   
 }
 .ul-navbar li{
     display: flex;
@@ -22,4 +25,12 @@
 
 .ul-navbar li:hover{
     font-weight: bold;
+}
+
+@media only screen and (max-width: 550px) {
+    .ul-navbar{
+        display: none;
+        margin-left: 30vw;
+       
+    }
 }

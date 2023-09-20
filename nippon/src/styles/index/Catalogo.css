@@ -1,0 +1,49 @@
+.contenedor-catalogo{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    
+    margin: auto;
+    background-color: #315253;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+.contenedor-catalogo span{
+    display: flex;
+    margin: 20px auto;
+}
+.contenedor-catalogo h1{
+    display: flex;
+    margin: 20px auto;
+}
+.ejemplo-catalogo{
+    display: flex;
+    flex-direction: column;
+    margin: auto 5vw;
+    min-height: 300px;
+    
+}
+.cards-importadas{
+    display: flex;
+    margin: auto;
+}
+.contenedor-iconos-catalogo{
+    display: flex;
+    margin: auto;
+}
+@media only screen and (max-width: 550px) {
+    .ejemplo-catalogo{
+        display: flex;
+        flex-direction: column;
+        margin: auto 0vw;
+        
+    }
+    .cards-importadas{
+        flex-direction: column;
+    }
+    .contenedor-iconos-catalogo{
+        display: flex;
+        margin: auto;
+    }
+}

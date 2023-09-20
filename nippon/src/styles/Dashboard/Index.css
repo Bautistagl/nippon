@@ -1,0 +1,39 @@
+.sidebar {
+    width: 300px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color:#DAA666; /* Color de fondo de la barra lateral */
+    color: #fff; /* Color de texto de la barra lateral */
+  }
+  
+  .dashboard-content {
+    margin-left: 300px; /* Ancho de la barra lateral */
+    /* Espacio para evitar que el contenido se superponga con la barra lateral */
+  }
+
+  .ul-sidebar{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+  }
+
+  .ul-sidebar li{
+    font-size: 1.5rem;
+    margin-top: 15px;
+    text-decoration: none;
+
+  }
+
+
+ 
+  .title-class {
+    font-size: 15px !important;
+  }
+  /* .swal2-popup {
+    height: 165px; 
+    overflow-y: hidden !important;
+  }
+   */
+ 

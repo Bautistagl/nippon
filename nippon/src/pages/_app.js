@@ -1,11 +1,43 @@
-import "../styles/Navbar.css"
+import "../styles/index/Navbar.css"
 import '../styles/globals.css'
-import '../styles/PrimerSeccion.css'
-import '../styles/Produccion.css'
-import '../styles/Iconos.css'
-import '../styles/CasiFooter.css'
-import '../styles/Footer.css'
+import '../styles/index/PrimerSeccion.css'
+import '../styles/index/Produccion.css'
+import '../styles/index/Iconos.css'
+import '../styles/index/CasiFooter.css'
+import '../styles/index/Footer.css'
+import '../styles/index/Catalogo.css'
+import '../styles/index/Secciones.css'
+import '../styles/index/Cards.css'
+import '../styles/Dashboard/Index.css'
+import '../styles/Dashboard/Pedidos.css'
+import '../styles/Dashboard/CheckoutScreen.css'
+import '../styles/admins/PedidosPendientes.css'
+import { useEffect } from 'react';
+import {  onAuthStateChanged } from 'firebase/auth';
+import { auth } from "@/firebasebautista"
 
 export default function App({ Component, pageProps }) {
+ 
+  
+  // Use useEffect para ejecutar la suscripción a onAuthStateChanged
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      
+      if (user) {
+        // Guarda el ID del usuario en el LocalStorage
+        localStorage.setItem('userId', user.uid);
+      } else {
+        // El usuario ha cerrado sesión, borra el ID del usuario del LocalStorage
+        localStorage.removeItem('userId');
+      }
+
+
+    });
+
+    
+    return () => unsubscribe();
+  }, []); 
+
+
   return <Component {...pageProps} />
 }

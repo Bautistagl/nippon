@@ -10,3 +10,13 @@ h1{
     margin: auto;
     font-size: 2.5rem;
 }
+a {
+    outline-color: none;
+  }
+  a.active {
+    color: none;
+  }
+  li a {
+    text-decoration: none !important;
+    color: white;
+  }
