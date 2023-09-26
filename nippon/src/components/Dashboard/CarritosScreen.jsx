@@ -84,9 +84,9 @@ const CarritosScreen = ({ usuario, productos }) => {
 
       <ul className='ul-pedidos'>
         {catalogData.map((productos, index) => (
-           <div className='card2'>
+           <div key={index} className='card2'>
 
-          <li key={index}>
+          <li >
          
 
             <h3>Producto: {productos.nombre}</h3>
