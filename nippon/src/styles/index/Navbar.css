@@ -8,21 +8,21 @@
     margin: auto;
     color: white;
     
-    justify-content: space-between; /* Agregar esta línea */
+    justify-content: space-between; 
     align-items: center;
 
 }
 .navbar-mobile{
     display: flex;
-    position: sticky;
+    position: absolute;
     width: 100%;
-    top: 0;
+    top: -10;
     height: 80px;
-    z-index: 2;
+    z-index: 9999;
     margin: auto;
     color: white;
     background-color: #DAA666;
-    justify-content: space-between; /* Agregar esta línea */
+    justify-content: space-between; 
     align-items: center;
 }
 .ul-navbar{
