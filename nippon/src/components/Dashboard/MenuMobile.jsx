@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 const MenuMobile = ({setMobile}) => {
@@ -11,16 +12,23 @@ const MenuMobile = ({setMobile}) => {
     </div>
         
     <div className='menu-mobile-div' >
+      <Link href='/dashboard'>
         <Image alt='' src='/home.png' height={50} width={50}/>
         <span> Inicio </span>
+      </Link>
     </div>
+   
     <div className='menu-mobile-div' >
+    <Link href='/dashboard/carrito'>
         <Image alt='' src='/carrito.png' height={50} width={50}/>
         <span> Carrito </span>
+    </Link>
     </div>
     <div className='menu-mobile-div' >
+      <Link href='/dashboard/pedidos'>
         <Image alt='' src='/pedidos.png' height={50} width={50}/>
         <span> Pedidos </span>
+      </Link>
     </div>
     <div className='menu-mobile-div' >
         <Image alt='' src='/facturas.png' height={50} width={50}/>
