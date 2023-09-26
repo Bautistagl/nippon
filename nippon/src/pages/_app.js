@@ -12,6 +12,7 @@ import '../styles/Dashboard/Index.css'
 import '../styles/Dashboard/Pedidos.css'
 import '../styles/Dashboard/CheckoutScreen.css'
 import '../styles/admins/PedidosPendientes.css'
+import '../styles/loginScreen.css'
 import { useEffect } from 'react';
 import {  onAuthStateChanged } from 'firebase/auth';
 import { auth } from "@/firebasebautista"
@@ -25,10 +26,13 @@ export default function App({ Component, pageProps }) {
       
       if (user) {
         // Guarda el ID del usuario en el LocalStorage
+        
         localStorage.setItem('userId', user.uid);
+        localStorage.setItem('email', user.email);
       } else {
         // El usuario ha cerrado sesión, borra el ID del usuario del LocalStorage
         localStorage.removeItem('userId');
+        localStorage.removeItem('email');
       }
 
 

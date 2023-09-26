@@ -30,7 +30,7 @@ export default function Carrito() {
       },[])
 
     return(
-        <div>
+        <div className="carrito-container">
         <div className="sidebar">
           <Sidebar/>
          

@@ -1,14 +1,25 @@
 .card{
     display: flex;
     flex-direction: column;
-    margin: 10px 50px;
+    margin: 1vw 1vh;
+    width: 15vw;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+.card2{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    align-items: center;
+    margin: 1vw 1vh;
+    width: 15vw;
     border: 2px solid white;
     border-radius: 10px;
 }
 .card img{
     display: flex;
-    height: 100%;
-    width: 100%;
+    max-width: 100%;
+    height: auto;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
 }
@@ -17,9 +28,11 @@
 }
 .card h2{
     font-weight: lighter;
+    font-size: 1.5rem;
     margin: 15px 0px;
    
 }
+
 .info-cards-landing{
     display: flex;
     flex-direction: column;
@@ -37,16 +50,29 @@
     margin-top: 10px;
     cursor: pointer;
 }
+.card2 button{
+    height: auto;
+    width: 100%;
+    padding: 5px;
+    border-radius: 50px;
+    background-color: #315253;
+    border: 3px solid #315253;
+    color: white;
+    
+    cursor: pointer;
+}
 .contenedor-cards{
     display: flex;
-    width: 80%;
-    margin: auto;
+    width: 100%;
+    margin: 0;
 }
 .botonera-cantidad{
     display: flex;
     justify-content: center;
+    min-width: 15vw !important;
 }
 .botonera-cantidad button{
+    width: 3vw !important;
     margin: 10px !important;
 }
 .botonera-cantidad div{
@@ -55,8 +81,28 @@
     text-align: center;
     margin: auto;
 }
+.agregar-button{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 10px;
+    width: 10vw !important;
+}
 @media only screen and (max-width: 550px) {
     .contenedor-cards{
        flex-direction: column;
     }
+    .card{
+        width: 80vw;
+        margin-top: 30px;
+    }
+    .card2{
+        width: 80vw;
+    }
+   .botonera-cantidad button{
+    width: 15vw !important;
+   }
+   .agregar-button{
+    width: 50vw !important;
+   }
 }

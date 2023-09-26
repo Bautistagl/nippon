@@ -8,17 +8,19 @@
 .tres-fotos{
     display: grid;
     grid-template-columns: auto;
+    margin-top: -30px;
 }
 .tres-textos{
     display: grid;
     grid-template-columns: auto;
+    height: 100%;
 }
 
 .tres-fotos div{
  display: flex;
- height: 35vh;
+ height: 30vh;
  width: 25vw;
- margin: 30px;
+ margin: 10px;
  /* margin: 12vh 5vw; */
 
  border-radius: 20px;
@@ -26,10 +28,10 @@
 .tres-textos div{
     display: flex;
     flex-direction: column;
-    height: 35vh;
+    height: 100%;
     width: 30vw;
     /* margin: 12vh 5vw; */
-   margin: 20px;
+   margin: 20px 50px;
    
    }
    .tres-textos p{
@@ -39,9 +41,18 @@
    }
    .separadores{
     display: flex;
-    flex-direction: column;
-  
+   margin-top: 50px;
+
+    
    }
+   .separadores img{
+   
+   height: 90%;
+   }
+   /* .separador{
+    display: flex;
+    margin-top: 100px;
+   } */
    @media only screen and (max-width: 550px) {
     .secciones{
         width: 90%;

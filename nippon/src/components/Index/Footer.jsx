@@ -7,7 +7,7 @@ const Footer = () => {
     <div className='contenedor-Footer'>
       <div className='footer-contenido' style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div className='iconos-footer'>
-          <Image className='icono-footer' style={{ margin: '20px' }} width={200} height={60} alt='' src='/logoNippon.png' />
+          <Image className='icono-footer' style={{ margin: '20px' }} width={200} height={60} alt='' priority={true} src='/logoNippon.png' />
           <Image className='icono-footer2' style={{ margin: 'auto' }} width={160} height={35} alt='' src='/letraNippon.png' />
           <span> breath and flow</span>
         </div>

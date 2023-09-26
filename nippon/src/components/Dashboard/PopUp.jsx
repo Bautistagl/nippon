@@ -4,12 +4,17 @@ import React, { useEffect, useState } from 'react';
 import moment from 'moment'
 import axios from '../../config2/axios';
 import back from '../../config2/axios';
+import { useRouter } from 'next/router';
+import Swal from 'sweetalert2'
 
 
 
 const PopUp = ({ usuario,pago,setPago,nombre,email,telefono,envio,direccion }) => {
+  const router = useRouter();
   const [cerrado, setCerrado] = useState(false);
   const [totalCarrito, setTotalCarrito] = useState(0);
+  const [botonSeleccionado, setBotonSeleccionado] = useState("");
+  const [usuario2, setUsuario2] = useState('')
   
 
   const handleCerrar = () => {
@@ -51,7 +56,13 @@ const PopUp = ({ usuario,pago,setPago,nombre,email,telefono,envio,direccion }) =
   };
   const handleMail = async () => {
     try {
-      const response = await back.post('/nodemailerSend');
+      const mailUsuario= {
+        // Aquí puedes definir los datos que deseas enviar al backend
+        mail: usuario2,
+       
+        // ...
+      };
+      const response = await back.post('/nodemailerSend',mailUsuario);
       console.log(response.data);  // Aquí puedes manejar la respuesta si es necesario
     } catch (error) {
       console.error(error);  // Maneja cualquier error que ocurra durante la solicitud
@@ -95,9 +106,24 @@ const PopUp = ({ usuario,pago,setPago,nombre,email,telefono,envio,direccion }) =
         await remove(carritoRef);
         updateTotalCarrito();
         handleMail()
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Producto agregado',
+          showConfirmButton: false,
+          timer:1000,
+          
+          customClass: {
+            confirmButton: 'confirm-button-class',
+            title: 'title-class',
+            icon: 'icon-class'
+          },
+          
+        })
+        router.push('/dashboard');
     
   
-        console.log('¡Compra finalizada!');
+       
       } else {
         console.log('No se encontraron productos en el carrito');
       }
@@ -105,28 +131,59 @@ const PopUp = ({ usuario,pago,setPago,nombre,email,telefono,envio,direccion }) =
       console.log('Error al finalizar la compra:', error);
     }
   };
+  const handleButton = (option) =>{
+    setSelectedOption(option);
+    setBotonSeleccionado(option);
+  }
 
   useEffect(()=>{
     updateTotalCarrito()
+    const id = localStorage.getItem('email')
+    if(id){
+      setUsuario2(id)
+    }
+    else{
+      alert('nadie logeado')
+    }
   },[])
 
   return (
     <div className="popup">
       <h1>Detalles de facturacion</h1>
-      <h4> Nombre y Apellido: <span> {nombre} </span></h4>
-      <h4> Email:<span>{email} </span></h4>
-      <h4> Telefono:<span> {telefono} </span></h4>
-      <h4> Metodo de envio:<span> {envio} </span></h4>
-      <h4> Direccion<span> {direccion} </span></h4>
+
+      <div style={{display:'flex'}}>
+      <h4> Nombre y Apellido: </h4> 
+      <span> {nombre} </span>
+      </div>
+
+      <div style={{display:'flex'}}>
+       <h4> Email:</h4>
+       <span>{email} </span>
+      </div>
+
+      <div style={{display:'flex'}}>
+       <h4> Telefono:</h4>
+       <span> {telefono} </span>
+      </div>
+
+      <div style={{display:'flex'}}>
+       <h4> Metodo de envio:</h4>
+       <span> {envio} </span>
+      </div>
+
+      <div style={{display:'flex'}}>
+       <h4> Direccion:</h4>
+       <span>{direccion} </span>
+      </div>
       <h2> Elegir metodo de pago</h2>
       {/* <h4> Comentarios:<span> {comentarios} </span></h4> */}
       <div className='botonera-popUp' >
       {options.map((option) => (
         <button
-          className='button-popup'
+        className={botonSeleccionado === option.value ? 'button-popup-select' : 'button-popup'}
           key={option.value}
           type="button"
-          onClick={() => setSelectedOption(option.value)}
+          onClick={() =>handleButton(option.value) }
         >
           
             {option.label}
@@ -134,9 +191,11 @@ const PopUp = ({ usuario,pago,setPago,nombre,email,telefono,envio,direccion }) =
         </button>
       ))}
     </div>
-      <h1>Total: {totalCarrito}</h1>
-      <button onClick={()=>{finalizarCompra()}}> Finalizar compra</button>
-      <button onClick={handleCerrar}>Cerrar</button>
+      <h1 >Total: {totalCarrito}</h1>
+      <div style={{display:'flex',justifyContent:'center'}}>
+      <button className='button-popup2' onClick={()=>{finalizarCompra()}}> Finalizar compra</button>
+      <button className='button-popup2' onClick={handleCerrar}>Volver</button>
+      </div>
     </div>
   );
 };

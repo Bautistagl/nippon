@@ -1,4 +1,21 @@
 .grid-pedidos{
-    display: grid;
-    grid-template-columns: auto auto auto auto;
+   display: flex;
+   flex-direction: column;
+   background-color: #DAA666;
+   
+}
+.datos-pedido{
+    display: flex;
+    width: 80%;
+}
+.datos-pedido p{
+    display: flex;
+    width: 100%;
+}
+.datos-pedido select{
+    width: 20vw;
+    margin-left: 0 !important;
+}
+.pedido{
+    border: 2px solid black;
 }

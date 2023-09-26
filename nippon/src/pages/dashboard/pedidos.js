@@ -22,7 +22,7 @@ export default function Pedidos() {
           })
         }
         else{
-          alert('nadie logeado')
+         
         }
     
     
@@ -31,7 +31,7 @@ export default function Pedidos() {
 
     return(
        
-         <div>
+         <div className="pedidos-container" >
         <div className="sidebar">
           <Sidebar/>
          

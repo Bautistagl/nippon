@@ -23,6 +23,7 @@
 .texto-seccion{
     display: flex;
     justify-content: center;
+    
 }
 
 .contenedor-produccion p{

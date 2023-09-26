@@ -5,7 +5,7 @@ const CheckoutScreen = () => {
     const [nombreapellido, setNombreapellido] = useState('')
     const [email, setEmail] =useState('')
     const [telefono, setTelefono] =useState('')
-    const [metodo,setMetodo] = useState('')
+    const [metodo,setMetodo] = useState('Correo Argentino GBA')
     const [direccion, setDireccion] = useState('')
     const [pago,setPago] =useState(false)
     const [usuario,setUsuario] = useState('')
@@ -27,7 +27,7 @@ const CheckoutScreen = () => {
     <div className='checkout-screen'>
       <div className={ pago ? 'blureado':''}>
 
-        <h1> Checkout:</h1>
+        <h2> Datos de facturacion:</h2>
         <label> Nombre y Apellido </label>
         <input onChange={(e)=> setNombreapellido(e.target.value)}/>
         <label> Email </label>
@@ -46,7 +46,7 @@ const CheckoutScreen = () => {
         <input onChange={(e)=> setDireccion(e.target.value)}/>
         <label> Comentarios extras  </label>
         <input/>
-        <button onClick={()=>setPago(true)}> Ir al pago </button>
+        <button className='button-checkout' onClick={()=>setPago(true)}> Ir al pago </button>
       </div>
         {pago ? (
         <PopUp usuario={usuario} nombre={nombreapellido} email={email} telefono={telefono}

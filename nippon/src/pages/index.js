@@ -37,7 +37,7 @@ export default function Home() {
       })
     }
     else{
-      alert('nadie logeado')
+      
     }
     const tiempoEspera = 15000; // 15 segundos (en milisegundos)
     
@@ -59,7 +59,7 @@ export default function Home() {
   },[])
   return (
     <>
-    <Navbar/>
+    <Navbar usuario={usuario}/>
     <PrimerSeccion/>
     <Diseno/>
     <GridLanding/>

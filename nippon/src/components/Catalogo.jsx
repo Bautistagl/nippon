@@ -1,7 +1,7 @@
 import { db } from '@/firebasebautista';
 import { get, push, ref, remove, set, update } from 'firebase/database';
 import React, { useState } from 'react'
-import Swal from 'sweetalert2'
+
 
 const Catalogo = ({usuario}) => {
 

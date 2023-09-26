@@ -4,6 +4,8 @@ import { db } from '@/firebasebautista';
 import Catalogo from "@/components/Dashboard/Catalogobautista";
 import Navbar from "@/components/Index/Navbarbautista";
 import Sidebar from "@/components/Dashboard/Sidebarbautista";
+import MenuMobile from "@/components/Dashboard/MenuMobilebautista";
+import MobileNavbar from "@/components/Dashboard/MobileNavbarbautista";
 
 
 
@@ -14,6 +16,7 @@ export default function Home2 () {
 
     const [usuario,setUsuario] = useState('')
     const [nombre,setNombre] =useState('')
+    const [mobile,setMobile] =useState(false)
   
     
     
@@ -32,14 +35,17 @@ export default function Home2 () {
         })
       }
       else{
-        alert('nadie logeado')
+        
       }
     },[])
   
 
 
     return (
-      <div>
+      <div className="index-container">
+
+        
+       {mobile ?  <MenuMobile setMobile={setMobile}/> : <MobileNavbar setMobile={setMobile}/>}
         <div className="sidebar">
           <Sidebar/>
          

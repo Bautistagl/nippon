@@ -14,15 +14,16 @@ const Secciones = () => {
 
 
       <div className="separadores">
-          <div className="separador">
+          {/* <div className="separador">
             <p>1</p>
           </div>
           <div className="separador">
-            <p>DOS</p>
+            <p>2</p>
           </div>
           <div className="separador">
-            <p>TRES</p>
-          </div>
+            <p>3</p>
+          </div> */}
+          <img alt='' src='lineaSeccion.png'/>
         </div>
 
       <div className="tres-textos">

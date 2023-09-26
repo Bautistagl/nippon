@@ -66,7 +66,7 @@ const PedidosPendientesScreen = () => {
       <h2>Lista de Pedidos</h2>
       <div className='grid-pedidos'>
         {pedidosData.map((pedido, index) => (
-          <div key={index}>
+          <div className='pedido' key={index}>
             
             <h3>Pedido #{index + 1}</h3>
             <h4>Productos:</h4>
@@ -75,12 +75,12 @@ const PedidosPendientesScreen = () => {
               <li key={productoIndex}>{producto.nombre} - Cantidad: {producto.cantidad}</li>
               ))}
           </ul>
-            <div style={{ display: 'flex' }}>
+            <div className='datos-pedido'>
               <p> Cliente: {pedido.nombre}</p>
               <p> Fecha: {pedido.fecha}</p>
               <p> Metodo: {pedido.metodo}</p>
               <p> Total: {pedido.total} </p>
-              <p>Estado: </p>
+              
               <select
                 value={pedido.estado}
                 onChange={(e) => actualizarEstado(pedido, e.target.value)}

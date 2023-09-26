@@ -20,7 +20,7 @@ const Cards = ({producto,usuario}) => {
 
 
   const aumentarCantidad = (nombre) => {
-    console.log(usuario)
+   
     const updatedCantidad = { ...productoCantidad };
     updatedCantidad[nombre] ++
     setProductoCantidad(updatedCantidad);
@@ -46,12 +46,12 @@ const Cards = ({producto,usuario}) => {
         let totaCarrito = 0;
   
         productosEnCarrito.forEach(producto => {
-          console.log(producto,'esto es producto')
+         
           totaCarrito += producto.precio * producto.cantidad;
         });
   
         setTotalCarrito(totaCarrito);
-        console.log(totaCarrito)
+      
       } else {
         setTotalCarrito(0);
       }
@@ -66,7 +66,7 @@ const Cards = ({producto,usuario}) => {
     const {id, nombre, precio } = producto
     try {
       const snapshot = await get(ref(db, 'usuarios/'+ `${usuario}`+'/carrito/' + nombre));
-  
+      const updatedCantidad = { ...productoCantidad };
       if (snapshot.exists()) {
         // Si el producto ya está en el carrito, actualiza la cantidad
         const productoEnCarrito = snapshot.val();
@@ -75,8 +75,11 @@ const Cards = ({producto,usuario}) => {
         update(ref(db, 'usuarios/'+ `${usuario}`+'/carrito/' + nombre), {
           cantidad: nuevaCantidad,
         });
+        updatedCantidad[nombre] = 0
+        setProductoCantidad(updatedCantidad)
       } else {
         // Si el producto no está en el carrito, agrégalo como nuevo
+        const updatedCantidad = { ...productoCantidad };
         const productoEnCarrito = {
           nombre,
           precio: producto.precio,
@@ -84,6 +87,8 @@ const Cards = ({producto,usuario}) => {
         };
   
         update(ref(db, 'usuarios/'+ `${usuario}`+'/carrito/' + nombre), productoEnCarrito);
+        updatedCantidad[nombre] = 0
+        setProductoCantidad(updatedCantidad)
       }
     updateTotalCarrito();
     Swal.fire({
@@ -92,7 +97,7 @@ const Cards = ({producto,usuario}) => {
       title: 'Producto agregado',
       showConfirmButton: false,
       timer:1000,
-      width:'15%',
+    
       customClass: {
         confirmButton: 'confirm-button-class',
         title: 'title-class',
@@ -122,7 +127,7 @@ const borrarProducto = (producto) => {
   return (
     <div className='card'>
         <img alt='' src='/fotoProducto.png'/>
-        <div>
+        <div className='info-cards-landing'>
             <h2>   {producto.nombre}  </h2>
             {producto.ancho ? <span> Ancho: {producto.ancho}  </span> : '' }
             
@@ -136,7 +141,7 @@ const borrarProducto = (producto) => {
           <div>  CANTIDAD:{productoCantidad[producto.nombre]} </div>
           <button onClick={()=>{aumentarCantidad(producto.nombre)}}> + </button>
         </div>
-            <button onClick={()=>{agregarProducto(producto,productoCantidad[producto.nombre])}}> Agregar al carrito</button>
+            <button className='agregar-button' onClick={()=>{agregarProducto(producto,productoCantidad[producto.nombre])}}> Agregar al carrito</button>
     </div>
   )
 }

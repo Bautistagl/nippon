@@ -37,17 +37,21 @@ const mostrarPedidos = async () => {
 
   return (
     <div className='pedidosScreen'>
-     
+     <span style={{opacity:'0'}}>.</span>
     <h2>Pedidos del usuario:</h2>
     {pedidosData.length > 0 ? (
       <ul className='ul-pedidos'>
         {pedidosData.map((pedido, index) => (
-          <li key={index}>
+          <li className='box-perdidos' key={index}>
             
             <h3>Pedido {index + 1}</h3>
             <p>Productos: {pedido.productos.length}</p>
             <p> Total: {pedido.total}</p>
-            <button onClick={() => verDetallesPedido(pedido)}>Ver detalles</button>
+            <div style={{display:'flex'}}>
+
+            <button className='boton-sidebar' onClick={() => verDetallesPedido(pedido)}>Ver detalles</button>
+            <button className='boton-sidebar' onClick={()=>{setPedidoSeleccionado(null)}}> Ver menos</button>
+            </div>
           </li>
         ))}
       </ul>
@@ -55,21 +59,25 @@ const mostrarPedidos = async () => {
       <p>Cargando...</p>
     )}
      {pedidoSeleccionado && (
-        <div>
+        <div className='detalles-pedidos'>
           <h2>Detalles del pedido:</h2>
-          <h4>Cantidad de productos: {pedidoSeleccionado.productos.length}</h4>
+          <h4>Productos: </h4>
           <ul>
             {pedidoSeleccionado.productos.map((producto, index) => (
+             
               <li className='detallesPedidos' key={index}>
             
                 <p> <span> Nombre: </span> {producto.nombre}</p>
                 <p> <span> Cantidad:</span> {producto.cantidad}</p>
-                <p> <span> Precio:</span> {producto.precio}</p>
+                <p> <span> Subtotal:</span> {producto.precio * producto.cantidad}</p>
               </li>
-            ))}
+           
+           ))}
+           <p> <span>  Total: </span>{pedidoSeleccionado.total}</p>
           </ul>
         </div>
       )}
+      
   </div>
   )
 }

@@ -1,30 +1,73 @@
 .checkout-screen{
     display: flex;
     flex-direction: column;
-    margin-left: 20px;
-    
+    justify-content: center;
+    height: 100%;
+    width: 32vw;
+    color: white;
+    background-color: #315253;
+    margin-top: 10px;
+    border-radius: 10px;
    
    
+}
+.checkout-screen label{
+  display: flex;
+  width: 90%;
+  margin: auto;
+}
+.button-checkout{
+  display: flex;
+  margin: auto;
+  margin-top: 5%;
+
+  border-radius: 10px;
+  background-color:white ;
+  justify-content: center;
+  border: none;
+  color: #315253;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  width: 50%;
+  margin-bottom: 20px;
+  
+}
+.checkout-screen h2{
+  display: flex;
+  justify-content: center;
 }
 .checkout-screen input,select{
     display: flex;
-    margin-bottom: 20px;
-    
-    width: 20%;
+    margin: auto ;
+    border: none !important;
+    margin-bottom: 10px;
+    height: 5vh;
+    padding: 0 !important;
+    justify-content: center;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    width: 90%;
 }
+
 .popup {
-    
-    
     position: fixed;
     top: 20%;
-    right: 35%;
+    right: 30%;
     height: 500px;
-    width: 500px;
-    background-color: rgb(152, 207, 227);
+    width: 700px;
+    background-color:#315253;
     margin: auto;
-    border-radius: 5px;
+    color: white;
+    border-radius: 10px;
     z-index: 1000;
-    
+  }
+  .popup *{
+    font-weight: lighter;
+    margin-left: 10px;
+  }
+  .popup h4{
+    width: 150px;
   }
   .blureado{
     filter: blur(5px);
@@ -32,17 +75,84 @@
   .botonera-popUp{
     display: flex;
     width: 100%;
+    margin-left: 0 !important;
     justify-content: center;
   }
   .button-popup{
     display: flex;
     margin: 20px;
     padding: 10px;
-    border-radius: 20px;
-    background-color:#3152537d ;
+    border-radius: 5px;
+    background-color:white ;
+    border: none;
+    color: #315253;
+    font-weight: bold;
+    cursor: pointer;
+  
+
+  }
+  .button-popup2{
+    width: 8vw;
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color:white ;
+    border: none;
+    color: #315253;
+    font-weight: bold;
+    cursor: pointer;
+  
+
+  }
+  .button-popup-select{
+    display: flex;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color:#DAA666 ;
     border: none;
     color: white;
+    font-weight: lighter;
     cursor: pointer;
-    
+    justify-content: center;
+   
+  }
   
+  @media only screen and (max-width:550px) {
+    .checkout-screen{
+      width: 80%;
+    }
+    .popup {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      border-radius: 0px;
+      width: 100% !important;
+    }
+    .popup h2{
+      display: flex;
+      justify-content: center;
+      margin: auto;
+    }
+    .botonera-popUp{
+      display: grid;
+      grid-template-columns: auto auto;
+      width: 90%;
+      margin: auto !important;
+      justify-content: center;
+      margin-top: 0px !important;
+    }
+    .button-popup{
+      justify-content: center;
+    }
+    .button-popup2{
+      width: 50vw;
+    }
   }

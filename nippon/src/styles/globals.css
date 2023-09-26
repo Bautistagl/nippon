@@ -20,3 +20,45 @@ a {
     text-decoration: none !important;
     color: white;
   }
+  .carrito-container{
+    margin: 0;
+    min-height: 100vh;
+    background-color: #315253;
+  }
+  .pedidos-container{
+    margin: 0;
+    min-height: 100vh;
+    background-color: #315253;
+  }
+  .index-container{
+    margin: 0;
+    min-height: 100vh;
+    background-color: #315253;
+  }
+  .checkout-container{
+    display: flex;
+    margin: 0;
+    min-height: 100vh;
+    margin-left: 300px;
+    background-color: white;
+    justify-content: center;
+  }
+  input:focus {
+    outline: none;
+  }
+  select:focus{
+    outline: none;
+  }
+
+  @media only screen and (max-width: 550px) {
+    .index-container{
+      margin-left: 0;
+    }
+    .checkout-container{
+      margin-left: 0;
+      background-color: #DAA666;
+    }
+    .checkout-screen{
+      width: 90% !important;
+    }
+  }

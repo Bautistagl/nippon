@@ -170,10 +170,7 @@ const Catalogo = ({usuario}) => {
        <Image onClick={()=>getSakura()} style={{marginLeft:'50px',display:'flex',margin:'60px auto'}} width={90} height={70} alt='' src='/Origami.png'/>
         <span> Sakura</span>
        </div>
-       <div className='ejemplo-catalogo'>
-       <Image style={{marginLeft:'50px',display:'flex',margin:'60px auto'}} width={20} height={70} alt='' src='/Canaleta.png'/>
-        <span> Canaleta</span>
-       </div>
+      
       </div>
       <div className='contenedor-cards'>
 
