@@ -91,7 +91,7 @@ const CarritosScreen = ({ usuario, productos }) => {
 
             <h3>Producto: {productos.nombre}</h3>
             <p>Cantidad: {productos.cantidad}</p>
-            <p> Total: {productos.precio * productos.cantidad}</p>
+            <p> Total: ${productos.precio * productos.cantidad}</p>
             <button onClick={()=>{borrarProducto(productos)}}> Borrar prod</button>
           </li>
            </div>

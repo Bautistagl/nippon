@@ -13,18 +13,9 @@
 
 }
 .navbar-mobile{
-    display: flex;
-    position: absolute;
-    width: 100%;
-    top: -10;
-    height: 80px;
-    z-index: 9999;
-    margin: auto;
-    color: white;
-    background-color: #DAA666;
-    justify-content: space-between; 
-    align-items: center;
+    display: none;
 }
+
 .ul-navbar{
     display: flex;
     
@@ -63,5 +54,21 @@
         display: none;
         margin-left: 30vw;
        
+    }
+    .navbar button{
+        width: 25vw;
+    }
+    .navbar-mobile{
+        display: flex;
+        position: sticky;
+        width: 100%;
+        top: -10;
+        height: 80px;
+        z-index: 100;
+        margin: auto;
+        color: white;
+        background-color: #DAA666;
+        justify-content: space-between; 
+        align-items: center;
     }
 }

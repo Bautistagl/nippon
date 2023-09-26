@@ -41,12 +41,12 @@ const PopUp = ({ usuario,pago,setPago,nombre,email,telefono,envio,direccion }) =
         let totaCarrito = 0;
   
         productosEnCarrito.forEach(producto => {
-          console.log(producto,'esto es producto')
+          
           totaCarrito += producto.precio * producto.cantidad;
         });
   
         setTotalCarrito(totaCarrito);
-        console.log(totaCarrito)
+        
       } else {
         setTotalCarrito(0);
       }
@@ -63,7 +63,7 @@ const PopUp = ({ usuario,pago,setPago,nombre,email,telefono,envio,direccion }) =
         // ...
       };
       const response = await back.post('/nodemailerSend',mailUsuario);
-      console.log(response.data);  // Aquí puedes manejar la respuesta si es necesario
+  
     } catch (error) {
       console.error(error);  // Maneja cualquier error que ocurra durante la solicitud
     }

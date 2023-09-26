@@ -3,14 +3,15 @@ import { signOut } from 'firebase/auth'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import { useRouter } from 'next/router';
 
 const Sidebar = () => {
 
-
+  const router = useRouter();
   const cerrarSesion = () => {
     signOut(auth)
 .then(() => {
-// Cierre de sesión exitoso
+  router.push('/');
 })
 .catch((error) => {
 // Manejo de errores, si es necesario
@@ -32,7 +33,9 @@ const Sidebar = () => {
             <li> Facturas </li>
             <li> Mi informacion</li>
         </ul>
+        
         <button className='boton-sidebar' onClick={()=>{cerrarSesion()}}> Cerrar sesion</button>
+        
     </div>
   )
 }
