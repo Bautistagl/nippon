@@ -14,7 +14,7 @@ import Link from "next/link"
   
   useEffect(() => {
     const generateLink = async () => {
-      console.log(precio)
+     
     
       try {
         const { data: preference } = await axios.post("/checkout", {
