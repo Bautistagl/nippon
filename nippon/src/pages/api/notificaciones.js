@@ -6,3 +6,4 @@ const notificaciones = async (req,res) => {
         res.status(200).sned('OK')
     }
 }
+export default notificaciones
