@@ -21,13 +21,17 @@ const handler = async (req, res) => {
         ],
         auto_return: "approved",
         back_urls: {
-          success: 'https://nippon-lemon.vercel.app/',
-          failure: 'https://nippon-lemon.vercel.app/'
+          success: 'http://localhost:3000/',
+          failure: 'http://localhost:3000/'
         },
        
       }
+      
 
       const response = await mercadopago.preferences.create(preference)
+
+
+      
       
 
       res.status(200).send({ url: response.body.init_point, id: response.body.id })
