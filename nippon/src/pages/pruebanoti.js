@@ -4,7 +4,7 @@ import { useEffect } from "react"
 
 
 
-export default function probando  ()  {
+export default function Probando  ()  {
     useEffect(() => {
         const generateLink = async () => {
          
