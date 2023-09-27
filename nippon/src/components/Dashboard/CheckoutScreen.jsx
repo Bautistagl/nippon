@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import PopUp from './PopUp'
+import BotonPrueba from './MercadoPago'
 
 const CheckoutScreen = () => {
     const [nombreapellido, setNombreapellido] = useState('')
@@ -52,6 +53,7 @@ const CheckoutScreen = () => {
         <PopUp usuario={usuario} nombre={nombreapellido} email={email} telefono={telefono}
         envio={metodo} direccion={direccion}  setPago={setPago} pago={pago} />
       ) : null}
+   
 
 
     </div>

@@ -1,6 +1,7 @@
 
 import CheckoutScreen from "@/components/Dashboard/CheckoutScreenbautista";
 import MenuMobile from "@/components/Dashboard/MenuMobilebautista";
+import BotonPrueba from "@/components/Dashboard/MercadoPagobautista";
 import MobileNavbar from "@/components/Dashboard/MobileNavbarbautista";
 import Sidebar from "@/components/Dashboard/Sidebarbautista";
 import { useState } from "react";
@@ -18,6 +19,7 @@ export default function Checkout () {
         </div>
         <div className="checkout-container">
         <CheckoutScreen/>
+        
         </div>
         </>
     )

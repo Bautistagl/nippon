@@ -6,6 +6,8 @@ import axios from '../../config2/axios';
 import back from '../../config2/axios';
 import { useRouter } from 'next/router';
 import Swal from 'sweetalert2'
+import BotonPrueba from './MercadoPago';
+import Link from 'next/link';
 
 
 
@@ -15,7 +17,7 @@ const PopUp = ({ usuario,pago,setPago,nombre,email,telefono,envio,direccion }) =
   const [totalCarrito, setTotalCarrito] = useState(0);
   const [botonSeleccionado, setBotonSeleccionado] = useState("");
   const [usuario2, setUsuario2] = useState('')
-  
+ 
 
   const handleCerrar = () => {
     setCerrado(true);
@@ -145,6 +147,7 @@ const PopUp = ({ usuario,pago,setPago,nombre,email,telefono,envio,direccion }) =
     else{
       alert('nadie logeado')
     }
+    
   },[])
 
   return (
@@ -194,6 +197,8 @@ const PopUp = ({ usuario,pago,setPago,nombre,email,telefono,envio,direccion }) =
       <h1 >Total: {totalCarrito}</h1>
       <div style={{display:'flex',justifyContent:'center'}}>
       <button className='button-popup2' onClick={()=>{finalizarCompra()}}> Finalizar compra</button>
+      {totalCarrito &&  <BotonPrueba precio={totalCarrito} /> }
+     
       <button className='button-popup2' onClick={handleCerrar}>Volver</button>
       </div>
     </div>
