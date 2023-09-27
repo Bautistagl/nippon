@@ -2,7 +2,7 @@ import PruebaNoti from "@/commons/PruebaNotibautista"
 
 
 
-export default  probando = () => {
+export default function probando  ()  {
 
 
     return(
