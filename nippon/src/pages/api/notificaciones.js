@@ -5,5 +5,8 @@ const notificaciones = async (req,res) => {
         console.log(req.body)
         res.status(200).sned('OK')
     }
+    else {
+        res.status(400).json({ message: "Method not allowed" })
+      }
 }
 export default notificaciones
