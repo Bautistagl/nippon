@@ -4,7 +4,9 @@ const cors = require("cors");
 const mercadopago = require("mercadopago");
 
 app.use(express.json());
-app.use(cors())
+app.use(cors({
+	origin: ['https://nippon-lemon.vercel.app'],
+  }));
 
 mercadopago.configure({
 	access_token:'TEST-5571926870828661-092709-0added273c1bb4fab1dd2624af4c46fd-420293827'
