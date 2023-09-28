@@ -107,7 +107,7 @@ const PopUp = ({ usuario,pago,setPago,nombre,email,telefono,envio,direccion }) =
         // Borra los productos del carrito después de finalizar la compra
         await remove(carritoRef);
         updateTotalCarrito();
-        handleMail()
+        await handleMail()
         Swal.fire({
           position: 'top-end',
           icon: 'success',
@@ -143,6 +143,7 @@ const PopUp = ({ usuario,pago,setPago,nombre,email,telefono,envio,direccion }) =
     const id = localStorage.getItem('email')
     if(id){
       setUsuario2(id)
+      console.log(usuario2)
     }
     else{
       alert('nadie logeado')
