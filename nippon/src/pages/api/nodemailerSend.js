@@ -36,7 +36,7 @@ async function nodemailerSend(req, res) {
         let htmlToSend = template(replacements);
         let mailOptions = {
           from: "Nippon",
-          to:'bautistagonzalezlazo@gmail.com' ,
+          to:body.mail ,
           subject: "Pedido recibido",
           html: htmlToSend,
         };
