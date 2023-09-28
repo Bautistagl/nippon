@@ -5,16 +5,11 @@ export default async function handler(req, res) {
       // Process the webhook data here
       const data = req.body;
       
-      // Handle the notification data, update your database, and perform any necessary actions.
+     
       const handleMail = async () => {
         try {
-          const mailUsuario= {
-            // Aquí puedes definir los datos que deseas enviar al backend
-            mail: 'bautistagonzalezlazo@gmail.com',
-           
-            // ...
-          };
-          const response = await back.post('/nodemailerSend',mailUsuario);
+         
+          const response = await back.post('/nodemailerSend');
       
         } catch (error) {
           console.error(error);  // Maneja cualquier error que ocurra durante la solicitud
