@@ -5,7 +5,7 @@ export default async function handler(req, res) {
       const data = req.body;
       
       // Handle the notification data, update your database, and perform any necessary actions.
-      
+      console.log('FUNCIONOOOOO')
       res.status(200).send('Webhook received successfully');
     } else {
       res.status(400).json({ message: 'Method not allowed' });
