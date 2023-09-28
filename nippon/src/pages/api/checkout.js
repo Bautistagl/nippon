@@ -21,8 +21,8 @@ const handler = async (req, res) => {
         ],
         auto_return: "approved",
         back_urls: {
-          success: 'http://localhost:3000/',
-          failure: 'http://localhost:3000/'
+          success: 'https://nippon-lemon.vercel.app/',
+          failure: 'https://nippon-lemon.vercel.app/'
         },
        
       }
