@@ -58,9 +58,9 @@ const Persistence = () => {
   return (
     <>
      <span style={{opacity:'0'}}>.</span>
-    <div className='login-form' >
-    <Image priority={true} className='icono-login' alt='' src='/logoNippon.png' width={220} height={65}/>
-      <Image className='icono-login' alt='' src='/letraNippon.png' width={220} height={60}/>
+    <div className='login-form'>
+    <Image priority={true} className='icono-login' alt='' src='/logoBien.png' width={180} height={55}/>
+      <Image className='icono-login' alt='' src='/letrasBien.png' width={120} height={30}/>
          <form style={{display:'flex',flexDirection:'column'}} onSubmit={registrarUsuario}>
         <input className='input-login' onChange={(e)=>setNombre(e.target.value)} placeholder='Nombre'/>
         <input className='input-login' onChange={(e)=>setApellido(e.target.value)}  placeholder='Apellido'/>

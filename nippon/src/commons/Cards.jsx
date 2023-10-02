@@ -78,12 +78,18 @@ const Cards = ({producto,usuario}) => {
         updatedCantidad[nombre] = 0
         setProductoCantidad(updatedCantidad)
       } else {
+        
         // Si el producto no está en el carrito, agrégalo como nuevo
         const updatedCantidad = { ...productoCantidad };
+
         const productoEnCarrito = {
           nombre,
+          alto: producto.alto,
+          capacidad: producto.capacidad,
+          largo: producto.largo,
           precio: producto.precio,
           cantidad,
+       
         };
   
         update(ref(db, 'usuarios/'+ `${usuario}`+'/carrito/' + nombre), productoEnCarrito);
@@ -113,16 +119,7 @@ catch (error) {
 };
 
 
-//BORRAR PRODUCTO RECIBE OBJETO NADA MAS Y BORRA TODOS
-const borrarProducto = (producto) => {
-  const { nombre } = producto
-  remove(ref(db,'usuarios/' +`${usuario}/carrito/${nombre}`  ),{
-      
-    
-  })
-  updateTotalCarrito();
-  
-}
+
 
   return (
     <div className='card'>

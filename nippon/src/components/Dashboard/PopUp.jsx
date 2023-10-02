@@ -79,7 +79,7 @@ const PopUp = ({ usuario,pago,setPago,nombre,email,telefono,envio,direccion }) =
       if (carritoSnapshot.exists()) {
         const carritoData = carritoSnapshot.val();
         const productosEnCarrito = Object.values(carritoData);
-        const fechaActual = moment().format('MMMM Do YYYY, h:mm:ss a')
+        const fechaActual = moment().format('DD/MM/YYYY')
         let totalCarrito = 0;
   
         productosEnCarrito.forEach(producto => {

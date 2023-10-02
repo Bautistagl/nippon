@@ -1,12 +1,12 @@
 .login{
     min-height: 100vh;
-    background-color: #DAA666;
+    background-color: #315253;
 }
 
 .login-form{
     display: flex;
     flex-direction: column;
-    background-color: #315253;
+    background-color: transparent;
     width: 30%;
     margin: auto;
     margin-top: 50px;
@@ -33,8 +33,8 @@
     margin: auto;
     margin-top: 5%;
     padding: 10px;
-    border-radius: 20px;
-    background-color:white ;
+    border-radius: 25px;
+    background-color:white;
     justify-content: center;
     border: none;
     color: #315253;

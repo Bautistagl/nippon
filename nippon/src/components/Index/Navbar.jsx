@@ -8,7 +8,7 @@ const Navbar = ({usuario}) => {
        
     <div className='navbar'>
       
-        <Image  width={100} height={25} alt='' src='/letraNippon.png'/>
+        <Image  width={100} height={25} alt='' src='/letrasBien.png'/>
         <ul className='ul-navbar'>
             <li> Inicio </li>
             <li> Nosotros </li>

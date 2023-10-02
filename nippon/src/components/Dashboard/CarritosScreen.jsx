@@ -1,5 +1,6 @@
 import { db } from '@/firebasebautista';
 import { get, ref, remove } from 'firebase/database';
+import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 
@@ -64,6 +65,9 @@ const CarritosScreen = ({ usuario, productos }) => {
       console.log('Error al leer los productos del carrito:', error);
     }
   };
+
+  
+
   
 
 
@@ -76,34 +80,60 @@ const CarritosScreen = ({ usuario, productos }) => {
   return (
     <div >
       <span style={{opacity:'0'}}>.</span>
-    <h2 >Carrito:</h2>
+    <h2 style={{color:'white'}} >Carrito:</h2>
     {isLoading ? (
-      <p>Cargando...</p>
+      <p>No hay productos en el carrito</p>
     ) : catalogData.length > 0 ? (
      
 
       <ul className='ul-pedidos'>
         {catalogData.map((productos, index) => (
            <div key={index} className='card2'>
+           <Image alt='' src='/fotoEjemplo.png' width={80} height={80}/>
 
           <li >
-         
+            <div style={{display:'flex',flexDirection:'column'}}>  
 
-            <h3>Producto: {productos.nombre}</h3>
-            <p>Cantidad: {productos.cantidad}</p>
-            <p> Total: ${productos.precio * productos.cantidad}</p>
-            <button onClick={()=>{borrarProducto(productos)}}> Borrar prod</button>
+            <h3  className='producto-carrito'> {productos.nombre}</h3>
+
+            <div className='info-carrito' >
+              {/* <span> Ancho: {productos.ancho} - </span> */}
+              <div  > Altura: <span> {productos.alto} </span> - </div>
+              <div > Base(largo): <span> {productos.largo} </span>  - </div>
+              <div > Capacidad: <span> {productos.capacidad} </span>  </div>
+            </div>
+
+            </div>
+            <div style={{display:'flex',marginLeft:'5%',marginTop:'auto'}}>
+            <div className='cantidaded-carrito'>
+           
+            <p> {productos.cantidad} </p>
+         
+            </div>
+            <img alt='' src='/bin.png' onClick={()=>{borrarProducto(productos)}}/> 
+            <p style={{margin:'auto',marginLeft:'10%'}}>  ${productos.precio * productos.cantidad}</p>
+            </div>
           </li>
            </div>
         ))}
       </ul>
       
     ) : (
-      <p>Cargando...</p>
+      <h2 style={{display:'flex',margin:'auto', justifyContent:'center', color:'white'}}>No hay productos en el carrito</h2>
     )}
-    <Link href='/dashboard/checkout'>
-      <button className='boton-sidebar'> Finalizar Compra </button>
-    </Link>
+    <div style={{display:'flex'}}>
+      { catalogData.length>0 ? 
+      <>
+       <button className='boton-sidebar2'>  <Link className='link2' href='/dashboard'> Seguir comprando </Link> </button>
+        <button className='boton-sidebar'> <Link className='link' href='/dashboard/checkout'> Finalizar compra </Link> </button>
+      </>:
+       <>
+        <button className='boton-sidebar2'>  <Link className='link2' href='/dashboard'> Seguir comprando </Link> </button>
+      </>
+      }
+
+    </div>
+    
   </div>
   );
 };

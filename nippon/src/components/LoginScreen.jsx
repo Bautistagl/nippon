@@ -40,8 +40,8 @@ const LoginScreen = () => {
     <>
     <span style={{opacity:'0'}}>.</span>
     <div className='login-form'>
-    <Image priority={true} className='icono-login' alt='' src='/logoNippon.png' width={220} height={65}/>
-      <Image className='icono-login' alt='' src='/letraNippon.png' width={220} height={60}/>
+    <Image priority={true} className='icono-login' alt='' src='/logoBien.png' width={180} height={55}/>
+      <Image className='icono-login' alt='' src='/letrasBien.png' width={120} height={30}/>
       <form style={{display:'flex',flexDirection:'column'}} onSubmit={(e)=>{iniciarSesion(e)}}>
         <input className='input-login' onChange={(e)=>setEmail(e.target.value)} placeholder='Email'/>
         <input className='input-login' onChange={(e)=>setContrasena(e.target.value)} type='password' placeholder='Contraseña'/>

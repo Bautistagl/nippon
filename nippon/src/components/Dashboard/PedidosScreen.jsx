@@ -38,45 +38,42 @@ const mostrarPedidos = async () => {
   return (
     <div className='pedidosScreen'>
      <span style={{opacity:'0'}}>.</span>
-    <h2>Pedidos del usuario:</h2>
+    <h2 style={{color:'white'}}>Mis pedidos:</h2>
+   
     {pedidosData.length > 0 ? (
+      
       <ul className='ul-pedidos'>
-        {pedidosData.map((pedido, index) => (
-          <li className='box-perdidos' key={index}>
-            
-            <h3>Pedido {index + 1}</h3>
-            <p>Productos: {pedido.productos.length}</p>
-            <p> Total: {pedido.total}</p>
-            <div style={{display:'flex'}}>
+         <div className='pedido-header'>
+      <span> Pedido # </span>
+      <span> Fecha</span>
+      <span> Productos</span>
+      <span> Total del pedido</span>
+      <span> Estado del pedido</span>
+      <span>-</span>
 
-            <button className='boton-sidebar' onClick={() => verDetallesPedido(pedido)}>Ver detalles</button>
-            <button className='boton-sidebar' onClick={()=>{setPedidoSeleccionado(null)}}> Ver menos</button>
-            </div>
-          </li>
+    </div>
+        {pedidosData.map((pedido, index) => (
+          <div  key={index}>
+             <div className='pedido-data'>
+            <p>{index + 1}</p>
+            <p>{pedido.fecha}</p>
+            <p> {pedido.productos.length}</p>
+            <p> ${pedido.total}</p>
+            <p> {pedido.estado}</p>
+            <p style={{color:'#DAA666', cursor:'pointer'}} > Ver compra</p>
+            {/* <div style={{display:'flex'}}>
+
+            <button className='boton-sidebar3' onClick={() => verDetallesPedido(pedido)}>Ver detalles</button>
+            <button className='boton-sidebar3' onClick={()=>{setPedidoSeleccionado(null)}}> Ver menos</button>
+            </div> */}
+             </div>
+          </div>
         ))}
       </ul>
     ) : (
       <p>Cargando...</p>
     )}
-     {pedidoSeleccionado && (
-        <div className='detalles-pedidos'>
-          <h2>Detalles del pedido:</h2>
-          <h4>Productos: </h4>
-          <ul>
-            {pedidoSeleccionado.productos.map((producto, index) => (
-             
-              <li className='detallesPedidos' key={index}>
-            
-                <p> <span> Nombre: </span> {producto.nombre}</p>
-                <p> <span> Cantidad:</span> {producto.cantidad}</p>
-                <p> <span> Subtotal:</span> {producto.precio * producto.cantidad}</p>
-              </li>
-           
-           ))}
-           <p> <span>  Total: </span>{pedidoSeleccionado.total}</p>
-          </ul>
-        </div>
-      )}
+  
       
   </div>
   )

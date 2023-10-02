@@ -20,16 +20,19 @@ const Sidebar = () => {
 
   return (
     <div className='sidebar'>
+      <div style={{display:'flex', flexDirection:'column'}}>
+
       <Link href='/'>
-        <Image style={{marginTop:'25px',marginLeft:'20px'}} width={100} height={30} alt='' priority={true} src='/logoNippon.png'/>
+        <Image className='iconos-sidebar'  width={160} height={45} alt='' priority={true} src='/logoMarronOk.png'/>
       </Link>
       <Link href='/'>
-        <Image style={{marginTop:'30px',marginLeft:'20px'}} width={100} height={25} alt='' src='/letraNippon.png'/>
+        <Image className='iconos-sidebar'  width={110} height={20} alt='' src='/letrasMarronOk.png'/>
       </Link>
+      </div>
         <ul className='ul-sidebar'>
-            <li> <Link href='/dashboard'> Inicio </Link>  </li>
-            <li> <Link href='/dashboard/carrito'> Carrito </Link></li>
-            <li> <Link href='/dashboard/pedidos'>  Historial Pedidos  </Link></li>
+            <li> <Link className='link-sidebar' href='/dashboard'> Inicio </Link>  </li>
+            <li> <Link className='link-sidebar' href='/dashboard/carrito'> Carrito </Link></li>
+            <li> <Link className='link-sidebar' href='/dashboard/pedidos'>  Historial Pedidos  </Link></li>
             <li> Facturas </li>
             <li> Mi informacion</li>
         </ul>

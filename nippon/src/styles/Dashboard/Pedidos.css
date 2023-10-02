@@ -1,18 +1,47 @@
 
 
 .ul-pedidos{
-    display: grid;
-    grid-template-columns: auto auto auto ;
+   display: flex;
+   flex-direction: column;
+   background-color: white;
+   width: 80%;
+   margin-left: 100px;
+   padding: 20px !important;
+   border-radius: 10px;
+   
+}
+.ul-pedidos h3{
+    font-weight: lighter;
 }
 .ul-pedidos li{
     display: flex;
-    flex-direction: column;
-    width: auto;
+    width: 100%;
 }
+.ul-pedidos li div{
+   font-weight: bold;
+   font-size: 0.9rem
+}
+
 .pedidosScreen{
     margin-left: 20px;
 }
+.ul-pedidos li img{
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+    margin: auto;
+    margin-left: 10%;
+}
 
+.ul-pedidos li span{
+   font-size: 0.9rem;
+   font-weight: 500 !important;
+}
+.ul-pedidos li p{
+    margin-top: auto;
+    margin-left: 20px;
+    font-weight: bold;
+ }
 
 
 .detallesPedidos{
@@ -20,7 +49,7 @@
 }
 .detallesPedidos h3,p{
     margin-right: 20px;
-    width:180px;
+    
 }
 .detallesPedidos span{
     font-weight: bold;
@@ -54,6 +83,33 @@
 }
 .detalles-pedidos{
     background-color: #DAA666;
+}
+.cantidaded-carrito{
+    display: flex;
+    border: 2px solid black;
+    border-radius: 10px;
+    height: 70%;
+    align-items: center ;
+    margin: auto;
+    margin-bottom: 0px;
+}
+.cantidaded-carrito p{
+    margin-top: 0 !important;
+    height: auto !important;
+}
+.cantidaded-carrito span{
+    display: flex;
+    padding: 5px;
+  
+    
+    font-weight: bold;
+}
+.info-carrito{
+    display: flex;
+    width: 40vw;
+}
+.info-carrito div{
+    margin: 20px;
 }
 
 
