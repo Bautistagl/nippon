@@ -48,7 +48,7 @@ async function avisoPedido(req, res) {
             //.send(error.message);
           } else {
             res.status(200).send({
-              email: null,
+              email: 'batata',
               nick_name: null,
               id: usuario.dataValues.id,
             });
