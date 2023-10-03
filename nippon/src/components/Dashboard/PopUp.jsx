@@ -65,6 +65,7 @@ const PopUp = ({ usuario,pago,setPago,nombre,email,telefono,envio,direccion }) =
       const response = await back.post('/nodemailerSend', mailUsuario);
       console.log(response,'AAAAAAA')
     } catch (error) {
+      console.log('ESTO ES ERROR EN TERMINAR COMPRA')
       console.error(error); 
      
     }
