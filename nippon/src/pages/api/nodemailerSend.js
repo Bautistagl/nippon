@@ -2,7 +2,6 @@ const nodemailer = require("nodemailer");
 const handlebars = require("handlebars");
 const fs = require("fs").promises;
 
-
 async function nodemailerSend(req, res) {
   const { method, body } = req;
 
@@ -18,17 +17,16 @@ async function nodemailerSend(req, res) {
 
       try {
         const html = await fs.readFile(
-           "/src/config/views/mail.html",
+          process.cwd() + "/src/config/views/mail.html",
           "utf-8"
         );
-  
 
         const template = handlebars.compile(html);
-        // const replacements = {
-        //   probando: "bautista",
-        // };
+        const replacements = {
+          probando: "bautista",
+        };
 
-        const htmlToSend = template();
+        const htmlToSend = template(replacements);
         const mailOptions = {
           from: "Nippon",
           to: "bautistagonzalezlazo@gmail.com",
@@ -45,22 +43,11 @@ async function nodemailerSend(req, res) {
           message: "Correo enviado exitosamente",
         });
       } catch (error) {
-        console.log(`Current directory: ${cwd()}`)
-        console.error("Error al enviar el correo:", error.message);
-        res.status(500).send(error);
+        console.error("Error:", error);
+        res.status(500).send("Error al enviar el correo");
       }
-      break;
-    }
-    default: {
-      res.status(405).end(); // Método no permitido
     }
   }
 }
 
 export default nodemailerSend;
-
-
-
-
-
-
