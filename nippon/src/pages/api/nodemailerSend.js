@@ -44,7 +44,7 @@ async function nodemailerSend(req, res) {
         });
       } catch (error) {
         console.error("Error al enviar el correo:", error.message);
-        res.status(500).send("Error al enviar el correo");
+        res.status(500).send(error);
       }
       break;
     }
