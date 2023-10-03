@@ -11,7 +11,10 @@ import Link from "next/link"
   const [loading, setLoading] = useState(true)
   
 
-  
+  const handleSubmit = async () => {
+    await finalizarCompra();
+    window.location.href = url;
+  };
   useEffect(() => {
     const generateLink = async () => {
      
@@ -40,12 +43,12 @@ import Link from "next/link"
 
   return (
     <div>
-   <Link href={`${url}`}>
-            <button onClick={()=>{finalizarCompra()}} >
+   {/* <Link href={`${url}`}>
+        </Link>  */}
+            <button onClick={handleSubmit} >
 
                 Pagar con mercado pago
             </button>
-        </Link> 
         
         
    
