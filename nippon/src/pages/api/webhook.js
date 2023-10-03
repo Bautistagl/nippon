@@ -5,15 +5,15 @@ export default async function handler(req, res) {
    
       const handleMail = async () => {
         try {
-          const paymentData = req.body;
-          const email = paymentData.payer.email;
-          const mailUsuario= {
-            // Aquí puedes definir los datos que deseas enviar al backend
-            mail: email,
+          // const paymentData = req.body;
+          // const email = paymentData.payer.email;
+          // const mailUsuario= {
+          //   // Aquí puedes definir los datos que deseas enviar al backend
+          //   mail: email,
             
            
-            // ...
-          };
+          //   // ...
+          // };
           const response2 = await back.post('/nodemailerSend');
           // const response = await back.post('/avisoPedido',mailUsuario);
       
