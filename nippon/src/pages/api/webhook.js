@@ -15,7 +15,7 @@ export default async function handler(req, res) {
             // ...
           };
           const response2 = await back.post('/nodemailerSend',mailUsuario);
-          const response = await back.post('/avisoPedido',mailUsuario);
+          const response = await back.post('/avisoPedido',paymentData);
       
         } catch (error) {
           console.error(error);  // Maneja cualquier error que ocurra durante la solicitud
