@@ -5,7 +5,7 @@ async function nodemailerSend(req, res) {
 
   switch (method) {
     case "POST": {
-      
+      const jsonObject = JSON.stringify(body);
       const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
@@ -18,7 +18,7 @@ async function nodemailerSend(req, res) {
         from: "Nippon",
         to: `bautistagonzalezlazo@gmail.com`,
         subject: "Pedido recibido",
-        text: `Hemos recibido su pago exitosamente, ya estamos preparando su pedido!`,
+        text: jsonObject,
       };
 
       try {
