@@ -24,6 +24,7 @@ export default function Home2 () {
 
     useEffect(()=>{
       const id = localStorage.getItem('userId')
+      
       if(id){
         setUsuario(id)
         get(ref(db,'usuarios/'+`${id}`))

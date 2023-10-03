@@ -16,11 +16,11 @@ async function avisoPedido(req, res) {
 
       const mailOptions = {
         from: "Nippon",
-        to: "bautistagonzalezlazo@gmail.com",
         subject: "Nuevo Pedido",
         text: "Este es el cuerpo del correo electrónico avisando un pedido.",
       };
-
+      const nickName = window.localStorage.getItem("email");
+      mailOptions.to = nickName
       try {
         await transporter.sendMail(mailOptions);
         console.log("Correo enviado");

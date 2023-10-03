@@ -7,7 +7,7 @@ export default async function handler(req, res) {
         try {
           const mailUsuario= {
             // Aquí puedes definir los datos que deseas enviar al backend
-            mail: 'bautista',
+            mail: 'bautistagonzalezlazo@gmail.com',
            
            
             // ...
