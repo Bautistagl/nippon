@@ -36,7 +36,7 @@ async function avisoPedido(req, res) {
         let htmlToSend = template(replacements);
         let mailOptions = {
           from: "Nippon",
-          to:'bautistagonzalezlazo@gmail.com' ,
+          to:'bautistagonzalezlazo@gmail.com',
           subject: "Pedido nuevo",
           html: htmlToSend,
         };

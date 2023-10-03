@@ -110,21 +110,8 @@ const PopUp = ({ usuario,pago,setPago,nombre,email,telefono,envio,direccion }) =
         await remove(carritoRef);
         updateTotalCarrito();
         await handleMail()
-        Swal.fire({
-          position: 'top-end',
-          icon: 'success',
-          title: 'Producto agregado',
-          showConfirmButton: false,
-          timer:1000,
-          
-          customClass: {
-            confirmButton: 'confirm-button-class',
-            title: 'title-class',
-            icon: 'icon-class'
-          },
-          
-        })
-        router.push('/dashboard');
+   
+      
     
   
        

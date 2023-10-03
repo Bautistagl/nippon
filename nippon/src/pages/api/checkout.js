@@ -27,12 +27,7 @@ const handler = async (req, res) => {
        
       }
       
-
       const response = await mercadopago.preferences.create(preference)
-
-
-      
-      
 
       res.status(200).send({ url: response.body.init_point, id: response.body.id })
     } catch (error) {}
