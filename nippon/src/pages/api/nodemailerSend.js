@@ -21,7 +21,7 @@ async function nodemailerSend(req, res) {
           process.cwd() + "/src/config/views/mail.html",
           "utf-8"
         );
-        console.log(`Current directory: ${cwd()}`)
+  
 
         const template = handlebars.compile(html);
         // const replacements = {
@@ -45,6 +45,7 @@ async function nodemailerSend(req, res) {
           message: "Correo enviado exitosamente",
         });
       } catch (error) {
+        console.log(`Current directory: ${cwd()}`)
         console.error("Error al enviar el correo:", error.message);
         res.status(500).send(error);
       }
