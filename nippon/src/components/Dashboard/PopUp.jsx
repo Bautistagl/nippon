@@ -59,18 +59,16 @@ const PopUp = ({ usuario,pago,setPago,nombre,email,telefono,envio,direccion }) =
   };
   const handleMail = async () => {
     try {
-      const mailUsuario= {
-        // Aquí puedes definir los datos que deseas enviar al backend
-        mail: usuario2,
-       
-        // ...
+      const mailUsuario = {
+        mail:usuario2
       };
-      const response = await back.post('/nodemailerSend',mailUsuario);
-  
+      const response = await back.post('/nodemailerSend', mailUsuario);
+     
     } catch (error) {
-      console.error(error);  // Maneja cualquier error que ocurra durante la solicitud
+      console.error(error); 
+     
     }
-  }
+  };
 
   const finalizarCompra = async () => {
     

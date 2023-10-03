@@ -37,7 +37,7 @@ async function nodemailerSend(req, res) {
         let mailOptions = {
           from: "Nippon",
           to:'bautistagonzalezlazo@gmail.com' ,
-          subject: "Pedido recibido",
+          subject: "Pedido recibidso",
           html: htmlToSend,
         };
         transporter.sendMail(mailOptions, (error, info) => {
