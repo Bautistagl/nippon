@@ -3,7 +3,7 @@ import back from "@/config2/axiosbautista";
 export default async function handler(req, res) {
     if (req.method === 'POST') {
       // Process the webhook data here
-      const data = req.body;
+      const data = req.body.data;
       
       // Handle the notification data, update your database, and perform any necessary actions.
       const handleMail = async (data) => {
@@ -22,7 +22,7 @@ export default async function handler(req, res) {
           console.error(error);  // Maneja cualquier error que ocurra durante la solicitud
         }
       }
-      await handleMail();
+      await handleMail(data);
       res.status(200).send('OK');
     } else {
       res.status(400).json({ message: 'Method not allowed' });
