@@ -3,8 +3,8 @@ import back from "@/config2/axiosbautista";
 export default async function handler(req, res) {
     if (req.method === 'POST') {
       // Process the webhook data here
-      const data = req.body.data;
-      
+      const data = req.body;
+      console.log('Mercado Pago data:', data);
       // Handle the notification data, update your database, and perform any necessary actions.
       const handleMail = async (data) => {
         try {
@@ -17,7 +17,8 @@ export default async function handler(req, res) {
           };
           const response2 = await back.post('/nodemailerSend',mailUsuario);
           const response = await back.post('/avisoPedido',mailUsuario);
-          console.log('Respuesta del servidor:', response.data);
+          console.log('Respuesta 1 del servidor:', response.data);
+          console.log('Respuesta 2 del servidor:', response.data);
         } catch (error) {
           console.error(error);  // Maneja cualquier error que ocurra durante la solicitud
         }

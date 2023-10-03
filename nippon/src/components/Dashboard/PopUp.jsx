@@ -62,7 +62,7 @@ const PopUp = ({ usuario,pago,setPago,nombre,email,telefono,envio,direccion }) =
       const mailUsuario = {
         mail:usuario2
       };
-      const response = await back.post('/nodemailerSend', mailUsuario);
+      const response = await back.post('/webhook');
       console.log(response,'AAAAAAA')
     } catch (error) {
       console.log('ESTO ES ERROR EN TERMINAR COMPRA')
