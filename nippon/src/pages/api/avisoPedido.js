@@ -1,12 +1,17 @@
+
+
 const nodemailer = require("nodemailer");
-const handlebars = require("handlebars");
-const fs = require("fs").promises;
+let handlebars = require("handlebars");
+const fs = require("fs");
+
 
 async function avisoPedido(req, res) {
   const { method, body } = req;
 
+
   switch (method) {
     case "POST": {
+
       const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
@@ -15,39 +20,44 @@ async function avisoPedido(req, res) {
         },
       });
 
-      try {
-        const html = await fs.readFile(
-          process.cwd() + "/src/config/views/mail.html",
-          "utf-8"
-        );
-
-        const template = handlebars.compile(html);
-        const replacements = {
-          probando: "LLEGO EL PEDIDO",
+      fs.readFile(process.cwd() + "/src/config/views/mail.html", "utf-8", function (
+        err,
+        html
+      ) {
+        if (err) {
+          console.log(err);
+          return;
+        }
+        let template = handlebars.compile(html);
+        let replacements = {
+          probando:`Llego el pedido`
         };
-
-        const htmlToSend = template(replacements);
-        const mailOptions = {
+      
+        let htmlToSend = template(replacements);
+        let mailOptions = {
           from: "Nippon",
-          to: "bautistagonzalezlazo@gmail.com",
-          subject: "NUEVO PEDIDO",
+          to:'bautistagonzalezlazo@gmail.com',
+          subject: "Pedido nuevo",
           html: htmlToSend,
         };
-
-        await transporter.sendMail(mailOptions);
-        console.log("Correo enviado");
-        res.status(200).send({
-          email: null,
-          nick_name: null,
-          id: "1",
-          message: "Correo enviado exitosamente",
+        transporter.sendMail(mailOptions, (error, info) => {
+          if (error) {
+            console.log("Error de mail");
+            console.log(error.message);
+            res.status(404).send();
+            //.send(error.message);
+          } else {
+            res.status(200).send({
+              email: null,
+              nick_name: null,
+              id: usuario.dataValues.id,
+            });
+          }
         });
-      } catch (error) {
-        console.error("Error:", error);
-        res.status(500).send("Error al enviar el correo");
-      }
+        res.status(202).send('OK');
+      });
     }
   }
 }
 
-export default avisoPedido;
+export default avisoPedido
