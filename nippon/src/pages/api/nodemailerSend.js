@@ -17,7 +17,7 @@ async function nodemailerSend(req, res) {
 
       try {
         const html = await fs.readFile(
-          process.cwd() + "/src/config/views/mail.html",
+          process.cwd() + "/src/config/views/mail2.html",
           "utf-8"
         );
 
