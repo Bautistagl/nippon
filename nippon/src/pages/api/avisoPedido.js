@@ -30,14 +30,14 @@ async function avisoPedido(req, res) {
         }
         let template = handlebars.compile(html);
         let replacements = {
-          probando:`bautista`
+          probando:`Llego el pedido`
         };
       
         let htmlToSend = template(replacements);
         let mailOptions = {
           from: "Nippon",
-          to:'bautistagonzalezlazo@gmail.com' ,
-          subject: "Pedido recibid2222222o",
+          to:'bautistagonzalezlazo@gmail.com',
+          subject: "Pedido nuevo",
           html: htmlToSend,
         };
         transporter.sendMail(mailOptions, (error, info) => {
