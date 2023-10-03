@@ -5,7 +5,7 @@ async function nodemailerSend(req, res) {
 
   switch (method) {
     case "POST": {
-      const mercadoPagoData = body.mercadoPagoData;
+      
       const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
@@ -16,9 +16,9 @@ async function nodemailerSend(req, res) {
 
       const mailOptions = {
         from: "Nippon",
-        to: "bautistagonzalezlazo@gmail.com",
+        to: `${body.mail}`,
         subject: "Pedido recibido",
-        text: `${mercadoPagoData.amount}`,
+        text: `Hemos recibido su pago exitosamente, ya estamos preparando su pedido!`,
       };
 
       try {
