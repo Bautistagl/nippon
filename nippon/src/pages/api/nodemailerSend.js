@@ -1,6 +1,4 @@
 const nodemailer = require("nodemailer");
-const handlebars = require("handlebars");
-const fs = require("fs").promises;
 
 async function nodemailerSend(req, res) {
   const { method, body } = req;
@@ -15,25 +13,14 @@ async function nodemailerSend(req, res) {
         },
       });
 
+      const mailOptions = {
+        from: "Nippon",
+        to: "bautistagonzalezlazo@gmail.com",
+        subject: "Pedido recibido",
+        text: "Este es el cuerpo del correo electrónico sin HTML.",
+      };
+
       try {
-        const html = await fs.readFile(
-          process.cwd() + "/src/config/views/mail2.html",
-          "utf-8"
-        );
-
-        const template = handlebars.compile(html);
-        const replacements = {
-          probando: "bautista",
-        };
-
-        const htmlToSend = template(replacements);
-        const mailOptions = {
-          from: "Nippon",
-          to: "bautistagonzalezlazo@gmail.com",
-          subject: "Pedido recibido",
-          html: htmlToSend,
-        };
-
         await transporter.sendMail(mailOptions);
         console.log("Correo enviado");
         res.status(200).send({
