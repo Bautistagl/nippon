@@ -21,7 +21,7 @@ export default async function handler(req, res) {
         }
       }
       await handleMail();
-      res.status(202).send('Se hizo una nueva compra!');
+      res.status(200).json({ message: 'Llego compra' });
     } else {
       res.status(400).json({ message: 'Method not allowed' });
     }
