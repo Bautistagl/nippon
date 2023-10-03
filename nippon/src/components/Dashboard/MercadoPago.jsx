@@ -5,7 +5,7 @@ import Link from "next/link"
 
 
 
- const BotonPrueba = ({precio}) => {
+ const BotonPrueba = ({precio,finalizarCompra}) => {
   const [preferencId, setPreferenceId] = useState(null)
   const [url, setUrl] = useState(null)
   const [loading, setLoading] = useState(true)
@@ -22,7 +22,8 @@ import Link from "next/link"
                 title: "Pedido nippon",
                 quantity: 1,
                 unit_price: precio
-              }
+              },
+             
         })
 
         setUrl(preference.url)
@@ -40,7 +41,7 @@ import Link from "next/link"
   return (
     <div>
    <Link href={`${url}`}>
-            <button>
+            <button onClick={()=>{finalizarCompra()}} >
 
                 Pagar con mercado pago
             </button>

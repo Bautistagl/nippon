@@ -17,6 +17,7 @@ const PopUp = ({ usuario,pago,setPago,nombre,email,telefono,envio,direccion }) =
   const [totalCarrito, setTotalCarrito] = useState(0);
   const [botonSeleccionado, setBotonSeleccionado] = useState("");
   const [usuario2, setUsuario2] = useState('')
+  const [idPedido, setIdPedido] = useState('')
  
 
   const handleCerrar = () => {
@@ -94,16 +95,17 @@ const PopUp = ({ usuario,pago,setPago,nombre,email,telefono,envio,direccion }) =
           fecha: fechaActual,
           cliente:usuario,
           nombre:nombre,
-          estado: 'En proceso',
+          estado: 'Pago pendiente',
         };
   
         // Guarda el pedido en la propiedad 'pedidos' del usuario
         const pedidosRef = ref(db, 'usuarios/'+ `${usuario}`+'/pedidos');
         const newPedidoRef = push(pedidosRef);
         const nuevoPedidoID = newPedidoRef.key;
+        setIdPedido(nuevoPedidoID)
         pedido.id = nuevoPedidoID;
         await set(newPedidoRef, pedido);
-  
+        
         // Borra los productos del carrito después de finalizar la compra
         await remove(carritoRef);
         updateTotalCarrito();
@@ -143,7 +145,7 @@ const PopUp = ({ usuario,pago,setPago,nombre,email,telefono,envio,direccion }) =
     const id = localStorage.getItem('email')
     if(id){
       setUsuario2(id)
-      console.log(usuario2)
+      
     }
     else{
       alert('nadie logeado')
@@ -198,7 +200,7 @@ const PopUp = ({ usuario,pago,setPago,nombre,email,telefono,envio,direccion }) =
       <h1 >Total: {totalCarrito}</h1>
       <div style={{display:'flex',justifyContent:'center'}}>
       <button className='button-popup2' onClick={()=>{finalizarCompra()}}> Finalizar compra</button>
-      {totalCarrito &&  <BotonPrueba precio={totalCarrito} /> }
+      {totalCarrito &&  <BotonPrueba finalizarCompra={finalizarCompra}   precio={totalCarrito} /> }
      
       <button className='button-popup2' onClick={handleCerrar}>Volver</button>
       </div>
