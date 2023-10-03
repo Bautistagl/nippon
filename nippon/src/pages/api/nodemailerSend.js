@@ -51,9 +51,7 @@ async function nodemailerSend(req, res) {
       }
       break;
     }
-    default: {
-      res.status(405).end(); // Método no permitido
-    }
+ 
   }
 }
 
