@@ -18,7 +18,7 @@ async function avisoPedido(req, res) {
         from: "Nippon",
         to:'bautistagonzalezlazo@gmail.com',
         subject: "Nuevo Pedido",
-        text: `Este es el cuerpo del correo electrónico avisando un ${body.payer}.`,
+        text: `Este es el cuerpo del correo electrónico avisando un ${body}.`,
       };
    
       try {
