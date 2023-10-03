@@ -17,7 +17,7 @@ async function nodemailerSend(req, res) {
         from: "Nippon",
         to: "bautistagonzalezlazo@gmail.com",
         subject: "Pedido recibido",
-        text: `${body}`,
+        text: `${body.amount}`,
       };
 
       try {
