@@ -2,6 +2,7 @@ const nodemailer = require("nodemailer");
 const handlebars = require("handlebars");
 const fs = require("fs").promises;
 
+
 async function nodemailerSend(req, res) {
   const { method, body } = req;
 
@@ -20,13 +21,14 @@ async function nodemailerSend(req, res) {
           process.cwd() + "/src/config/views/mail.html",
           "utf-8"
         );
+        console.log(`Current directory: ${cwd()}`)
 
         const template = handlebars.compile(html);
-        const replacements = {
-          probando: "bautista",
-        };
+        // const replacements = {
+        //   probando: "bautista",
+        // };
 
-        const htmlToSend = template(replacements);
+        const htmlToSend = template();
         const mailOptions = {
           from: "Nippon",
           to: "bautistagonzalezlazo@gmail.com",
