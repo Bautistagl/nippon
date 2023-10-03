@@ -6,16 +6,16 @@ export default async function handler(req, res) {
       const data = req.body;
       
       // Handle the notification data, update your database, and perform any necessary actions.
-      const handleMail = async () => {
+      const handleMail = async (data) => {
         try {
           const mailUsuario= {
             // Aquí puedes definir los datos que deseas enviar al backend
             mail: 'bautistagonzalezlazo@gmail.com',
-
+            mercadoPagoData: data,
            
             // ...
           };
-          const response2 = await back.post('/nodemailerSend', data);
+          const response2 = await back.post('/nodemailerSend',mailUsuario);
           const response = await back.post('/avisoPedido',mailUsuario);
           console.log('Respuesta del servidor:', response.data);
         } catch (error) {

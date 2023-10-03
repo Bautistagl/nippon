@@ -5,6 +5,7 @@ async function nodemailerSend(req, res) {
 
   switch (method) {
     case "POST": {
+      const mercadoPagoData = body.mercadoPagoData;
       const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
@@ -17,7 +18,7 @@ async function nodemailerSend(req, res) {
         from: "Nippon",
         to: "bautistagonzalezlazo@gmail.com",
         subject: "Pedido recibido",
-        text: `${body.amount}`,
+        text: `${mercadoPagoData.amount}`,
       };
 
       try {
