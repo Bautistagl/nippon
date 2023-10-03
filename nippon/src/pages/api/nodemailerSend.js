@@ -1,15 +1,12 @@
-
-
 const nodemailer = require("nodemailer");
-let handlebars = require("handlebars");
-const fs = require("fs");
+const handlebars = require("handlebars");
+const fs = require("fs").promises;
 
 async function nodemailerSend(req, res) {
   const { method, body } = req;
 
   switch (method) {
     case "POST": {
-
       const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
@@ -18,37 +15,39 @@ async function nodemailerSend(req, res) {
         },
       });
 
-      fs.readFile(process.cwd() + "/src/config/views/mail.html", "utf-8", async (
-        err,
-        html
-      ) => {
-        if (err) {
-          console.log(err);
-          return;
-        }
-        let template = handlebars.compile(html);
-        let replacements = {
-          probando: `bautista`,
+      try {
+        const html = await fs.readFile(
+          process.cwd() + "/src/config/views/mail.html",
+          "utf-8"
+        );
+
+        const template = handlebars.compile(html);
+        const replacements = {
+          probando: "bautista",
         };
 
-        let htmlToSend = template(replacements);
+        const htmlToSend = template(replacements);
         const mailOptions = {
           from: "Nippon",
-          to: 'bautistagonzalezlazo@gmail.com',
-          subject: "Pedido recibidso",
+          to: "bautistagonzalezlazo@gmail.com",
+          subject: "Pedido recibido",
           html: htmlToSend,
         };
 
-        // Aquí agregamos la palabra clave `await`
         await transporter.sendMail(mailOptions);
-
-        console.log('se mando')
+        console.log("Correo enviado");
         res.status(200).send({
           email: null,
           nick_name: null,
-          id: '1',
+          id: "1",
+          message: "Correo enviado exitosamente",
         });
-      });
+      } catch (error) {
+        console.error("Error:", error);
+        res.status(500).send("Error al enviar el correo");
+      }
     }
   }
 }
+
+export default nodemailerSend;
