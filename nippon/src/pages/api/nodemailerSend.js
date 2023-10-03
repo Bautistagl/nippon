@@ -16,7 +16,7 @@ async function nodemailerSend(req, res) {
 
       const mailOptions = {
         from: "Nippon",
-        to: `${window.localStorage.getItem("email")}`,
+        to: `bautistagonzalezlazo@gmail.com`,
         subject: "Pedido recibido",
         text: `Hemos recibido su pago exitosamente, ya estamos preparando su pedido!`,
       };

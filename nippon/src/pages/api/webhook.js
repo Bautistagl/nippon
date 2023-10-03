@@ -2,9 +2,7 @@ import back from "@/config2/axiosbautista";
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
-      // Process the webhook data here
-    
-      // Handle the notification data, update your database, and perform any necessary actions.
+     
       const handleMail = async () => {
         try {
           const mailUsuario= {
