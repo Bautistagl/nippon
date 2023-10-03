@@ -2,7 +2,7 @@ import back from "@/config2/axiosbautista";
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
-   
+      console.log(req.body);
       const handleMail = async () => {
         try {
           // const paymentData = req.body;
