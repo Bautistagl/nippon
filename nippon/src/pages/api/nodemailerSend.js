@@ -43,11 +43,21 @@ async function nodemailerSend(req, res) {
           message: "Correo enviado exitosamente",
         });
       } catch (error) {
-        console.error("Error:", error);
+        console.error("Error al enviar el correo:", error.message);
         res.status(500).send("Error al enviar el correo");
       }
+      break;
+    }
+    default: {
+      res.status(405).end(); // Método no permitido
     }
   }
 }
 
 export default nodemailerSend;
+
+
+
+
+
+
