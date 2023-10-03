@@ -2,19 +2,19 @@ import back from "@/config2/axiosbautista";
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
-      console.log(req.body);
+      
       const handleMail = async () => {
         try {
-          // const paymentData = req.body;
+          const paymentData = req.body;
           // const email = paymentData.payer.email;
-          // const mailUsuario= {
-          //   // Aquí puedes definir los datos que deseas enviar al backend
-          //   mail: email,
+          const mailUsuario= {
+            // Aquí puedes definir los datos que deseas enviar al backend
+            mail: paymentData,
             
            
-          //   // ...
-          // };
-          const response2 = await back.post('/nodemailerSend');
+            // ...
+          };
+          const response2 = await back.post('/nodemailerSend',mailUsuario);
           // const response = await back.post('/avisoPedido',mailUsuario);
       
         } catch (error) {
