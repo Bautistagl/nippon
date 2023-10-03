@@ -30,14 +30,14 @@ async function avisoPedido(req, res) {
         }
         let template = handlebars.compile(html);
         let replacements = {
-          probando:`Llego el pedido`
+          probando:`bautista`
         };
       
         let htmlToSend = template(replacements);
         let mailOptions = {
           from: "Nippon",
-          to:'bautistagonzalezlazo@gmail.com',
-          subject: "Pedido nuevo",
+          to:'bautistagonzalezlazo@gmail.com' ,
+          subject: "Pedido recibid2222222o",
           html: htmlToSend,
         };
         transporter.sendMail(mailOptions, (error, info) => {
@@ -48,7 +48,7 @@ async function avisoPedido(req, res) {
             //.send(error.message);
           } else {
             res.status(200).send({
-              email: 'batata',
+              email: null,
               nick_name: null,
               id: usuario.dataValues.id,
             });
