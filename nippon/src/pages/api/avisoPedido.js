@@ -16,7 +16,7 @@ async function avisoPedido(req, res) {
 
       const mailOptions = {
         from: "Nippon",
-        to:body.mail,
+        to:'bautistagonzalezlazo@gmail.com',
         subject: "Nuevo Pedido",
         text: `Este es el cuerpo del correo electrónico avisando un ${body.id}.`,
       };
