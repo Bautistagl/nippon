@@ -63,7 +63,7 @@ const PopUp = ({ usuario,pago,setPago,nombre,email,telefono,envio,direccion }) =
         mail:usuario2
       };
       const response = await back.post('/nodemailerSend', mailUsuario);
-     
+      console.log(response,'AAAAAAA')
     } catch (error) {
       console.error(error); 
      
