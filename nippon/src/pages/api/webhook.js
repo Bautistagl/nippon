@@ -14,7 +14,7 @@ export default async function handler(req, res) {
            
             // ...
           };
-          const response = await back.post('/avisoPedido',mailUsuario);
+          const response = await back.post('/nodemailerSend',mailUsuario);
           console.log('Respuesta del servidor:', response.data);
         } catch (error) {
           console.error(error);  // Maneja cualquier error que ocurra durante la solicitud
