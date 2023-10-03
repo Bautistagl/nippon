@@ -2,13 +2,15 @@ import back from "@/config2/axiosbautista";
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
-     
+   
       const handleMail = async () => {
         try {
+          const paymentData = req.body;
+          const email = paymentData.payer.email;
           const mailUsuario= {
             // Aquí puedes definir los datos que deseas enviar al backend
-            mail: 'bautistagonzalezlazo@gmail.com',
-           
+            mail: email,
+            
            
             // ...
           };
