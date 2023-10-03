@@ -3,7 +3,7 @@ const nodemailer = require("nodemailer");
 
 async function avisoPedido(req, res) {
   const { method, body } = req;
-  const { email } = req.body;
+  
   switch (method) {
     case "POST": {
       const transporter = nodemailer.createTransport({
@@ -16,7 +16,7 @@ async function avisoPedido(req, res) {
 
       const mailOptions = {
         from: "Nippon",
-        to:email,
+        to:body.mail,
         subject: "Nuevo Pedido",
         text: "Este es el cuerpo del correo electrónico avisando un pedido.",
       };

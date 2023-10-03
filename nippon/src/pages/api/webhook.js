@@ -14,7 +14,7 @@ export default async function handler(req, res) {
            
             // ...
           };
-          const response2 = await back.post('/nodemailerSend',mailUsuario);
+          const response2 = await back.post('/nodemailerSend');
           const response = await back.post('/avisoPedido',mailUsuario);
       
         } catch (error) {
