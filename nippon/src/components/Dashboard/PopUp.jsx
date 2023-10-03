@@ -108,7 +108,7 @@ const PopUp = ({ usuario,pago,setPago,nombre,email,telefono,envio,direccion }) =
         // Borra los productos del carrito después de finalizar la compra
         await remove(carritoRef);
         updateTotalCarrito();
-        await handleMail()
+        // await handleMail()
    
       
     
