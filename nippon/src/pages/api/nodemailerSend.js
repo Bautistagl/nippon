@@ -50,7 +50,7 @@ async function nodemailerSend(req, res) {
             res.status(200).send({
               email: null,
               nick_name: null,
-              id: usuario.dataValues.id,
+              id: '1',
             });
           }
         });
