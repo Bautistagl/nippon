@@ -25,6 +25,7 @@ export default function Home() {
 
 
   useEffect(()=>{
+    console.log( process.cwd())
     const id = localStorage.getItem('userId')
     if(id){
       setUsuario(id)

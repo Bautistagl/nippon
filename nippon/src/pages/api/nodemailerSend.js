@@ -18,7 +18,7 @@ async function nodemailerSend(req, res) {
 
       try {
         const html = await fs.readFile(
-          process.cwd() + "/src/config/views/mail.html",
+           "/src/config/views/mail.html",
           "utf-8"
         );
   
@@ -51,7 +51,9 @@ async function nodemailerSend(req, res) {
       }
       break;
     }
- 
+    default: {
+      res.status(405).end(); // Método no permitido
+    }
   }
 }
 
