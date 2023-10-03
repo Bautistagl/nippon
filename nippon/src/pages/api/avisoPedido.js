@@ -54,7 +54,7 @@ async function avisoPedido(req, res) {
             });
           }
         });
-        res.status(202).send();
+        res.status(202).send('OK');
       });
     }
   }
