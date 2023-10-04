@@ -19,7 +19,7 @@ const DetallesPedido = ({ pedido, onClose }) => {
             <h4 style={{marginBottom:'5%'}}> Resumen del pedido</h4>
             <span style={{fontWeight:'bold'}}> Productos:{pedido.productos.length}</span>
             {pedido.productos.map((producto, index) => (
-            <div style={{display:'flex',padding:'5px'}}>
+            <div key={index} style={{display:'flex',padding:'5px'}}>
                 <div style={{display:'flex'}}>
 
              <h5 style={{width:'100%'}}> {producto.nombre}</h5>
@@ -37,9 +37,9 @@ const DetallesPedido = ({ pedido, onClose }) => {
         </div>
       <ul>
         {pedido.productos.map((producto, index) => (
-            <div style={{display:'flex',marginTop:'2%'}}> 
+            <div key={index} style={{display:'flex',marginTop:'2%'}}> 
             <Image alt='' src='/fotoEjemplo.png' height={60} width={60}/>
-          <div className='producto-detalle-pedido' key={index}>
+          <div className='producto-detalle-pedido' >
             <h4> {producto.nombre}</h4>
             <div style={{display:'flex'}}>
                 <span>Base(largo):{producto.largo} -</span>
