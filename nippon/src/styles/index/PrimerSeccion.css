@@ -14,9 +14,7 @@
     display: flex;
     z-index: 100;
     margin: 10px 60px ;
-    
 }
-
 
 .primer-seccion button{
     display: flex;
@@ -36,7 +34,7 @@
     font-weight: bold;
     
 }
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 600px) {
     .primer-seccion{
         height: auto;
     }

@@ -36,6 +36,12 @@ a {
     min-height: 100vh;
     background-color: #315253;
   }
+  .pendientes-container{
+    margin: 0;
+    margin-left: 300px;
+    min-height: 100vh;
+    background-color: #315253;
+  }
   .checkout-container{
     display: flex;
     margin: 0;
@@ -47,11 +53,14 @@ a {
   input:focus {
     outline: none;
   }
+  textarea:focus {
+    outline: none;
+  }
   select:focus{
     outline: none;
   }
 
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 600px) {
     .index-container{
       margin-left: 0;
     }

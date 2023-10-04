@@ -63,12 +63,12 @@ const PedidosPendientesScreen = () => {
   return (
     <>
     <div>
-      <h2>Lista de Pedidos</h2>
+      <h2 style={{marginTop:'0px'}}>Lista de Pedidos</h2>
       <div className='grid-pedidos'>
         {pedidosData.map((pedido, index) => (
           <div className='pedido' key={index}>
             
-            <h3>Pedido #{index + 1}</h3>
+            <h3>Pedido #{pedido.id}</h3>
             <h4>Productos:</h4>
           <ul>
             {pedido.productos.map((producto, productoIndex) => (
@@ -85,10 +85,10 @@ const PedidosPendientesScreen = () => {
                 value={pedido.estado}
                 onChange={(e) => actualizarEstado(pedido, e.target.value)}
               >
-                <option value="Procesando">Procesando pago</option>
+                <option value="Pendiente">Pago pendiente</option>
                 <option value="Armado">En armado</option>
-                <option value="Camino">En Camino</option>
-                <option value="Completado">Completado</option>
+                <option value="Camino">En camino</option>
+                <option value="Completado">Entregado</option>
               </select>
             </div>
           </div>

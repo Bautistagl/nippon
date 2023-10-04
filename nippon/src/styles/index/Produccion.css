@@ -14,7 +14,6 @@
     width: 100%;
     margin: auto;
     height: 500px;
-
 }
 .contenedor-produccion h1{
     color: #DAA666;
@@ -23,6 +22,7 @@
 .texto-seccion{
     display: flex;
     justify-content: center;
+    
     
 }
 
@@ -97,6 +97,21 @@
      grid-area: 2 / 1 / 3 / 3; 
      background-color: #72dde1;
      background-image: url('/fotoDiv4.png');
+}
+
+@media only screen and (max-width: 800px){
+    .contenedor-produccion p{
+        display: flex;
+        width: 80%;
+       text-align: center;
+        margin: auto;
+    }
+    .div1  {
+       width: 145%;
+    }
+    .div2{
+        display: none;
+    }
 }
 
 @media only screen and (max-width: 550px) {

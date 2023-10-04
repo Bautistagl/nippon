@@ -1,11 +1,17 @@
 
 .secciones{
     display: flex;
-    width: 60%;
+    width: 70%;
     margin: auto;
     justify-content: center;
 }
-.tres-fotos{
+.tres-fotos,
+.tres-textos {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+/* .tres-fotos{
     display: grid;
     grid-template-columns: auto;
     margin-top: -30px;
@@ -14,7 +20,7 @@
     display: grid;
     grid-template-columns: auto;
     height: 100%;
-}
+} */
 
 .tres-fotos div{
  display: flex;
@@ -41,7 +47,7 @@
    }
    .separadores{
     display: flex;
-   margin-top: 50px;
+   margin-top: 100px;
 
     
    }
@@ -53,6 +59,32 @@
     display: flex;
     margin-top: 100px;
    } */
+
+   @media only screen and (max-width:800px){
+    .secciones{
+        width: 100% ;
+    }
+
+    .tres-textos p{
+        width: 100%;
+        font-size: 0.9rem;
+        margin: 0px ;
+       }
+       .texto-seccion h2{
+        margin: 20px auto;
+        width: 100%;
+       }
+       .tres-fotos{
+        flex:1;
+        justify-content: center;
+        margin: auto;
+       }
+       .tres-fotos div{
+        display: flex;
+        margin: auto;
+       }
+   }
+
    @media only screen and (max-width: 550px) {
     .secciones{
         width: 90%;
@@ -84,6 +116,7 @@
        .texto-seccion h2{
         margin: 20px auto;
         width: 100%;
+        color: #315253;
        }
        .texto-seccion p{
         width: 100%;

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import PopUp from './PopUp'
 import BotonPrueba from './MercadoPago'
+import Swal from 'sweetalert2'
 
 const CheckoutScreen = () => {
     const [nombreapellido, setNombreapellido] = useState('')
@@ -11,7 +12,16 @@ const CheckoutScreen = () => {
     const [pago,setPago] =useState(false)
     const [usuario,setUsuario] = useState('')
 
-    
+    const handlePago = ()  => {
+      if(email !== '' && telefono !== '' && nombreapellido !== '' && direccion !== ''){
+        setPago(true)
+      } else{
+        Swal.fire({
+          icon: 'error',
+          title: 'Complete todos los campos',
+        })
+      }
+    }
     useEffect(()=>{
       const id = localStorage.getItem('userId')
       if(id){
@@ -47,7 +57,7 @@ const CheckoutScreen = () => {
         <input onChange={(e)=> setDireccion(e.target.value)}/>
         <label> Comentarios extras  </label>
         <input/>
-        <button className='button-checkout' onClick={()=>setPago(true)}> Ir al pago </button>
+        <button className='button-checkout' onClick={()=>handlePago(true)}> Ir al pago </button>
       </div>
         {pago ? (
         <PopUp usuario={usuario} nombre={nombreapellido} email={email} telefono={telefono}

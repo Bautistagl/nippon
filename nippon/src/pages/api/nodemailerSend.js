@@ -19,6 +19,17 @@ async function nodemailerSend(req, res) {
         to: `bautistagonzalezlazo@gmail.com`,
         subject: "Pedido recibido",
         text: jsonObject,
+        template: `
+        <html>
+          <head>
+            <title>Your title</title>
+          </head>
+          <body>
+            <h1>Your heading</h1>
+            <p>Your paragraph</p>
+          </body>
+        </html>
+      `,
       };
 
       try {

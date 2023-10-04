@@ -91,7 +91,7 @@ const CarritosScreen = ({ usuario, productos }) => {
            <div key={index} className='card2'>
            <Image alt='' src='/fotoEjemplo.png' width={80} height={80}/>
 
-          <li >
+          <li className='li-prueba-carrito' >
             <div style={{display:'flex',flexDirection:'column'}}>  
 
             <h3  className='producto-carrito'> {productos.nombre}</h3>
@@ -104,15 +104,14 @@ const CarritosScreen = ({ usuario, productos }) => {
             </div>
 
             </div>
-            <div style={{display:'flex',marginLeft:'5%',marginTop:'auto'}}>
             <div className='cantidaded-carrito'>
            
-            <p> {productos.cantidad} </p>
+            <span> {productos.cantidad} </span>
          
-            </div>
-            <img alt='' src='/bin.png' onClick={()=>{borrarProducto(productos)}}/> 
+            <img className='icono-borrar' alt='' src='/bin.png' onClick={()=>{borrarProducto(productos)}}/> 
             <p style={{margin:'auto',marginLeft:'10%'}}>  ${productos.precio * productos.cantidad}</p>
             </div>
+        
           </li>
            </div>
         ))}

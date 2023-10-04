@@ -13,8 +13,8 @@ const Secciones = () => {
       </div>
 
 
-      <div className="separadores">
-          {/* <div className="separador">
+      {/* <div className="separadores">
+          <div className="separador">
             <p>1</p>
           </div>
           <div className="separador">
@@ -22,9 +22,9 @@ const Secciones = () => {
           </div>
           <div className="separador">
             <p>3</p>
-          </div> */}
-          <img alt='' src='lineaSeccion.png'/>
-        </div>
+          </div>
+          <img alt='' src='/lineasBien2.png'/>
+        </div> */}
 
       <div className="tres-textos">
         <div className='texto-seccion'>

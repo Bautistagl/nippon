@@ -68,7 +68,7 @@
     cursor: pointer;
     
 }
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 600px) {
     .footer-contenido{
         display: flex;
         width: 90%;
@@ -90,8 +90,9 @@
     .footer-item-mobile{
         display: flex;
         flex-direction: column;
+        justify-content: center;
         text-align: start;
-        align-items: flex-start; /* Alinea verticalmente los elementos en el centro */
+      
         margin: 1vw;
         color: white;
     }

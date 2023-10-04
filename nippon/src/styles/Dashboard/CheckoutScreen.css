@@ -135,9 +135,11 @@
       height: 100vh;
       display: flex;
       flex-direction: column;
-      margin: 0;
+      margin: 0 !important;
       border-radius: 0px;
       width: 100% !important;
+      padding: 0 !important;
+      border: none;
     }
     .popup h2{
       display: flex;

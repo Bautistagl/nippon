@@ -49,14 +49,23 @@
     cursor: pointer;
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width:800px) {
+    .navbar button{
+        width: 15vw ;
+    }
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
     .ul-navbar{
         display: none;
         margin-left: 30vw;
        
     }
     .navbar button{
-        width: 25vw;
+        width: 25vw !important;
     }
     .navbar-mobile{
         display: flex;

@@ -45,7 +45,7 @@ import Link from "next/link"
     <div>
    {/* <Link href={`${url}`}>
         </Link>  */}
-            <button onClick={handleSubmit} >
+            <button className="button-popup2" onClick={handleSubmit} >
 
                 Pagar con mercado pago
             </button>

@@ -32,7 +32,10 @@
     display: flex;
     margin: auto;
 }
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width:800px){
+
+}
+@media only screen and (max-width: 600px) {
     .ejemplo-catalogo{
         display: flex;
         flex-direction: column;

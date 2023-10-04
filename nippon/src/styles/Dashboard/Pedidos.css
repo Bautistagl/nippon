@@ -6,6 +6,7 @@
    background-color: white;
    width: 80%;
    margin-left: 100px;
+  
    padding: 20px !important;
    border-radius: 10px;
    
@@ -84,17 +85,26 @@
 .detalles-pedidos{
     background-color: #DAA666;
 }
+
 .cantidaded-carrito{
     display: flex;
-    border: 2px solid black;
+  
+    justify-content: center;
     border-radius: 10px;
-    height: 70%;
+    height: 20%;
     align-items: center ;
     margin: auto;
-    margin-bottom: 0px;
+    margin-bottom: 30px;
+
+}
+.cantidaded-carrito span{
+    border: 2px solid black;
+    border-radius: 15px;
+    justify-content: center;
+    width: 70px;
 }
 .cantidaded-carrito p{
-    margin-top: 0 !important;
+    margin: auto;
     height: auto !important;
 }
 .cantidaded-carrito span{
@@ -106,21 +116,82 @@
 }
 .info-carrito{
     display: flex;
-    width: 40vw;
+    width: 30vw;
 }
 .info-carrito div{
     margin: 20px;
 }
+.detalles-pedido{
+    background-color: white;
+    border-radius: 15px;
+    padding: 25px;
+    width: 80%;
+    margin-left: 100px;
+}
+.detalles-pedido h3{
+    color: #DAA666;
+}
+.detalles-pedido h4{
+    color: #315253;
+}
+.detalles-pedido p{
+    font-size: 0.9rem;
+}
+.producto-detalle-pedido{
+    display: flex;
+    flex-direction: column;
+    margin-left: 2%;
+}
+.producto-detalle-pedido  span{
+    font-size: 0.8rem;
+}
+.solo-mobile{display: none;}
+@media only screen and (max-width: 1024px) {
+    .cantidaded-carrito{
+     
+        margin-left: 20%;
+    }
+    .li-prueba-carrito{
+        display: flex;
+        flex-direction: column;
+    }
+    .cantidaded-carrito *{
+        margin: 5px;
+        padding: 5px;
+        justify-content: center;
+    }
+    .cantidaded-carrito span{
+        width: 100px;
+        padding: 5px;
+       
+    }
+    .solo-mobile{
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 15%  ;
+    }
+    .ul-pedidos{
+        
+        margin-left: 20px;
+    }
+    .info-carrito div{
+        margin: 10px;
+    }
+}
 
-
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 800px) {
     .ul-pedidos{
         display: grid;
         grid-template-columns: auto ;
-        padding: 0;
-        width: 90%;
+        padding: 0 !important;
+        width: 95%;
         margin: auto !important;
         justify-content: center;
+        align-content: center;
+    }
+    .solo-mobile{
+        margin-left: 40%;
+        margin-bottom: 10px;
     }
     .box-perdidos{
         margin: auto;

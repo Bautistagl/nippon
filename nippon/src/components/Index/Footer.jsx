@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 const Footer = () => {
@@ -31,11 +32,15 @@ const Footer = () => {
 
         <div className='footer-item'>
           <h3>¡Quiero ser distribuidor!</h3>
-          <button>Empecemos</button>
+          <Link href='/formulario'>
+          <button> Empecemos </button>
+          </Link>
         </div>
         <div className='footer-item-mobile'>
           <h3>¡Quiero ser distribuidor!</h3>
-          <button>Empecemos</button>
+          <Link href='/formulario'>
+          <button style={{width:'100%'}}> Empecemos </button>
+          </Link>
         </div>
         
       </div>

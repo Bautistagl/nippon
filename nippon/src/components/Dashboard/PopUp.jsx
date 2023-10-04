@@ -185,8 +185,9 @@ const PopUp = ({ usuario,pago,setPago,nombre,email,telefono,envio,direccion }) =
     </div>
       <h1 >Total: {totalCarrito}</h1>
       <div style={{display:'flex',justifyContent:'center'}}>
-      <button className='button-popup2' onClick={()=>{handleMail()}}> Finalizar compra</button>
-      {totalCarrito &&  <BotonPrueba finalizarCompra={finalizarCompra}   precio={totalCarrito} /> }
+      {totalCarrito && botonSeleccionado !== 'MercadoPago' && botonSeleccionado &&  <button className='button-popup2' onClick={()=>{finalizarCompra()}}> Realizar pedido</button> }
+      
+      {totalCarrito && botonSeleccionado === 'MercadoPago' &&  <BotonPrueba finalizarCompra={finalizarCompra}   precio={totalCarrito} /> }
      
       <button className='button-popup2' onClick={handleCerrar}>Volver</button>
       </div>

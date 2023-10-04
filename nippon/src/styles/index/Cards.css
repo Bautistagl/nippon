@@ -10,8 +10,8 @@
     display: flex;
     background-color: white;
     align-items: flex-start;
-    width: 100%;
- 
+   
+    min-height: 170px ;
     justify-content: flex-start;
     margin: 5px;
     border-bottom: 2px solid black;
@@ -46,7 +46,7 @@
 }
 .card button{
     height: auto;
-    width: 100%;
+    width: 80%;
     padding: 5px;
     border-radius: 50px;
     background-color: transparent;
@@ -67,9 +67,12 @@
     cursor: pointer;
 }
 .contenedor-cards{
-    display: flex;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: center;
     width: 100%;
     margin: 0;
+    
 }
 .botonera-cantidad{
     display: flex;
@@ -77,8 +80,8 @@
     min-width: 15vw !important;
 }
 .botonera-cantidad button{
-    width: 3vw !important;
-    margin: 10px !important;
+    width: 3vw ;
+    margin: 10px ;
 }
 .botonera-cantidad div{
     display: flex;
@@ -91,11 +94,53 @@
     justify-content: center;
     margin: auto;
     margin-bottom: 10px;
-    width: 10vw !important;
+    width: 10vw ;
 }
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width:1260px){
     .contenedor-cards{
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+    .card{
+        width: 22vw; 
+    }
+}
+ 
+@media only screen and (max-width:1024){
+    .card2 {
+        min-height: 250px ;
+        width: 80% !important;
+    }
+}
+  
+
+@media only screen and (max-width:800px){
+    .contenedor-cards{
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+    .card{
+        display: flex;
+        flex-direction: column;
+        margin: 1vw 1vh;
+        width: 30vw;
+        border: 2px solid white;
+        border-radius: 10px;
+    }
+    .card button{
+        width: 20vw;
+    }
+    .botonera-cantidad button{
+        width: 25vw  ;
+       }
+       
+   
+}
+@media only screen and (max-width: 600px) {
+    .contenedor-cards{
+        display: flex;
        flex-direction: column;
+       margin-bottom: 40px;
     }
     .card{
         width: 80vw;
@@ -103,6 +148,12 @@
     }
     .card2{
         width: 80vw;
+    }
+    /* .card2 img{
+        
+    } */
+    .icono-borrar{
+        display: flex !important;
     }
    .botonera-cantidad button{
     width: 15vw !important;
