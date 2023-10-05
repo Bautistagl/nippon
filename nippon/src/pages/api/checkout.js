@@ -1,7 +1,7 @@
 import mercadopago from "mercadopago"
 
 mercadopago.configure({
-  access_token: 'TEST-5571926870828661-092709-0added273c1bb4fab1dd2624af4c46fd-420293827'
+  access_token: 'TEST-6052064161175970-100515-84875ac212ab24afa5fb0682d78ae91a-420293827'
 })
 
 
