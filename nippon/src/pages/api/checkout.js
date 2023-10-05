@@ -1,8 +1,9 @@
 import mercadopago from "mercadopago"
 
 mercadopago.configure({
-  access_token: 'APP_USR-7421639621568939-100512-467d3652b2b12eaf7ff4434c563b1177-737047721'
+  access_token: 'TEST-5571926870828661-092709-0added273c1bb4fab1dd2624af4c46fd-420293827'
 })
+mercadopago.payment.findById
 
 const handler = async (req, res) => {
   if (req.method === "POST") {
