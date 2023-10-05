@@ -162,7 +162,7 @@
     width: 50vw !important;
    }
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 440px) {
     .card2 img{
         display: none;
     }
