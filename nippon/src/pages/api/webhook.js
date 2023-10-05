@@ -1,7 +1,11 @@
 import back from "@/config2/axiosbautista";
 
 export default async function handler(req, res) {
-    if (req.method === 'POST') {
+  const { method, body } = req;
+  
+  switch (method) {
+    case "POST": {
+
       const data = req.body
       const handleMail = async () => {
         try {
@@ -23,7 +27,5 @@ export default async function handler(req, res) {
       }
       await handleMail();
       res.status(200).send('OK');
-    } else {
-      res.status(400).json({ message: 'Method not allowed' });
     }
-}  
+    } }
