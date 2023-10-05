@@ -2,13 +2,14 @@ import back from "@/config2/axiosbautista";
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
-      const paymentData = req.body;
-      const data = {
-        id: paymentData.id,
-        amount: paymentData.amount,
-        currency: paymentData.currency,
-        // ...
-      };
+      const data = req.body
+      // const paymentData = req.body;
+      // const data = {
+      //   id: paymentData.id,
+      //   amount: paymentData.amount,
+      //   currency: paymentData.currency,
+      //   // ...
+      // };
       // const handleMail = async () => {
       //   try {
       //     const paymentData = req.body;
