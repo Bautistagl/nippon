@@ -15,7 +15,7 @@ const DetallesPedido = ({ pedido, onClose }) => {
           <h4>Productos:</h4>
         </div>
 
-        <div style={{marginLeft:'40%',width:'100%'}}>
+        <div className='resumen-pedido'>
             <h4 style={{marginBottom:'5%'}}> Resumen del pedido</h4>
             <span style={{fontWeight:'bold'}}> Productos:{pedido.productos.length}</span>
             {pedido.productos.map((producto, index) => (
@@ -35,7 +35,7 @@ const DetallesPedido = ({ pedido, onClose }) => {
 
         <Image style={{cursor:'pointer'}} alt='' src='/cerrar2.png' height={30} width={30} onClick={onClose}/>
         </div>
-      <ul>
+      <ul className='ul-pedidos2'>
         {pedido.productos.map((producto, index) => (
             <div key={index} style={{display:'flex',marginTop:'2%'}}> 
             <Image alt='' src='/fotoEjemplo.png' height={60} width={60}/>

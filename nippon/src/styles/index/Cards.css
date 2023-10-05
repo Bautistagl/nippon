@@ -162,3 +162,13 @@
     width: 50vw !important;
    }
 }
+@media only screen and (max-width: 400px) {
+    .card2 img{
+        display: none;
+    }
+    .card2{
+       
+       padding: 5px;
+    }
+    
+}

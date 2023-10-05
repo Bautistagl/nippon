@@ -50,6 +50,7 @@ a {
     background-color: #315253;
     justify-content: center;
   }
+
   input:focus {
     outline: none;
   }

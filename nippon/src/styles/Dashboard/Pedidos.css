@@ -5,9 +5,9 @@
    flex-direction: column;
    background-color: white;
    width: 80%;
-   margin-left: 100px;
+   margin-left: 5vw;
   
-   padding: 20px !important;
+   padding: 20px ;
    border-radius: 10px;
    
 }
@@ -82,9 +82,7 @@
  
     font-weight: bold;
 }
-.detalles-pedidos{
-    background-color: #DAA666;
-}
+
 
 .cantidaded-carrito{
     display: flex;
@@ -122,11 +120,12 @@
     margin: 20px;
 }
 .detalles-pedido{
+
     background-color: white;
     border-radius: 15px;
     padding: 25px;
     width: 80%;
-    margin-left: 100px;
+    margin-left: 5vw
 }
 .detalles-pedido h3{
     color: #DAA666;
@@ -146,7 +145,17 @@
     font-size: 0.8rem;
 }
 .solo-mobile{display: none;}
+.resumen-pedido{
+    width: 70%;
+    margin-left: 10vw;
+}
+@media only screen and (max-width:1100){
+    
+}
 @media only screen and (max-width: 1024px) {
+    .detalles-pedido{
+        margin-left: 5vw;
+    }
     .cantidaded-carrito{
      
         margin-left: 20%;
@@ -177,15 +186,21 @@
     .info-carrito div{
         margin: 10px;
     }
+    .ul-pedidos2{
+        padding: 0;
+    }
+    .resumen-pedido{
+        margin-left: 2vw;
+    }
 }
 
 @media only screen and (max-width: 800px) {
     .ul-pedidos{
         display: grid;
         grid-template-columns: auto ;
-        padding: 0 !important;
+        padding: 0px;
         width: 95%;
-        margin: auto !important;
+        margin: auto;
         justify-content: center;
         align-content: center;
     }
@@ -204,5 +219,19 @@
     .pedidosScreen h2{
         justify-content: center;
         color: white;
+    }
+    .detalles-pedido{
+        font-size: 0.8rem;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .ul-pedidos{
+       width: 90%;
+    }
+    .cantidaded-carrito{
+        margin: auto;
+    }
+    .detalles-pedido p,h3{
+        font-size: 0.7rem;
     }
 }

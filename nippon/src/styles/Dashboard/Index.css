@@ -141,7 +141,7 @@
    .pedido-header {
     display: flex;
     justify-content: space-between;
-    background-color: #daa66671; /* Puedes personalizar el fondo según tus preferencias */
+    border-bottom: 2px solid black;
     padding: 8px;
     font-weight: bold;
   }
@@ -173,6 +173,11 @@
     margin: 0;
     padding: 5px; /* Ajusta el padding según tus necesidades */
   }
+  .menu-mobile-div{
+    font-size: 1rem;
+  
+    
+  }
    @media only screen and (max-width:800px){
     .sidebar{
       width: 200px;
@@ -183,6 +188,13 @@
     .dashboard-content{
       margin-left: 200px;
     }
+    .pedido-header{
+      width: 90%;
+      margin: auto;
+    }
+    .pedido-header, .pedido-data {
+      font-size: 0.8rem;
+    }
    }
    @media only screen and (max-width: 600px) {
     .sidebar{
@@ -190,5 +202,18 @@
     }
     .dashboard-content{
       margin-left: 0;
+    }
+   }
+
+   @media only screen and (max-width:400px) {
+    .pedido-header {
+      width: 95%;
+      border-radius: 10px;
+    
+      margin: auto;
+      font-size: 0.7rem;
+    }
+    .pedido-data p{
+      font-size: 0.7rem;
     }
    }

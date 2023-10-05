@@ -122,6 +122,22 @@
     justify-content: center;
    
   }
+  .button-popup3{
+    display: flex;
+    margin: 20px;
+    padding: 10px;
+    width: 50%;
+    border-radius: 5px;
+    background-color:#315253 ;
+    border: none;
+    color: white;
+    justify-content: center;
+    margin: auto;
+    font-weight: bold;
+    cursor: pointer;
+  
+
+  }
   
   @media only screen and (max-width:550px) {
     .checkout-screen{

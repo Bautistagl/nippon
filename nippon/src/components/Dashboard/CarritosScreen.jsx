@@ -120,7 +120,7 @@ const CarritosScreen = ({ usuario, productos }) => {
     ) : (
       <h2 style={{display:'flex',margin:'auto', justifyContent:'center', color:'white'}}>No hay productos en el carrito</h2>
     )}
-    <div style={{display:'flex'}}>
+    <div style={{display:'flex',marginBottom:'10px'}}>
       { catalogData.length>0 ? 
       <>
        <button className='boton-sidebar2'>  <Link className='link2' href='/dashboard'> Seguir comprando </Link> </button>
@@ -132,6 +132,7 @@ const CarritosScreen = ({ usuario, productos }) => {
       }
 
     </div>
+    <span style={{opacity:'0'}}>.</span>
     
   </div>
   );
