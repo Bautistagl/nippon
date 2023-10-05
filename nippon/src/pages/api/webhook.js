@@ -27,7 +27,7 @@ export default async function handler(req, res) {
         }
       }
       await handleMail();
-      res.status(200).send('OK');
+      res.status(201).send('OK');
     }
     case "GET": {
       
