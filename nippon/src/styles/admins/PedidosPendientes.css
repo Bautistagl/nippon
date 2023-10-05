@@ -1,8 +1,8 @@
 .grid-pedidos{
    display: flex;
    flex-direction: column;
-   background-color: #315253;
-   color: white;
+   background-color: #ffffff;
+   color: black;
    
 }
 .datos-pedido{
