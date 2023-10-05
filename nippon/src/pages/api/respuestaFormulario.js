@@ -46,7 +46,7 @@ async function respuestaFormulario(req, res) {
 
       try {
         await transporter.sendMail(mailOptions);
-        console.log("Correo enviado");
+        console.log("Coraaaareo enviado");
         res.status(200).send({
           email: null,
           nick_name: null,
