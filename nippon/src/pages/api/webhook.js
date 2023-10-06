@@ -9,7 +9,7 @@ export default async function handler(req, res) {
       const data = body
       console.log(data)
       
-      res.status(201).send('OK');
+      res.status(200).send('OK');
     }
    
     } }
