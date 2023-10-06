@@ -11,5 +11,12 @@ export default async function handler(req, res) {
       
       res.status(200).send('OK');
     }
+    case "Get": {
+
+      const data = body
+      console.log(data)
+      
+      res.status(200).send('OK');
+    }
    
     } }
