@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 const Diseno = () => {
@@ -9,7 +10,7 @@ const Diseno = () => {
 Suministramos nuestros productos a distribuidores y mayoristas.
 Innovación, calidad y compromiso son los valores principales en donde yacen los cimientos de nuestra marca.
     </p>
-    <button> Ver mas</button>
+    <button> <Link href='https://wa.me/1138824301/?text=Buenos Dias'> Ver mas </Link> </button>
     </div>
   )
 }

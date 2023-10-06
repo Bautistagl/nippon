@@ -9,8 +9,8 @@ async function avisoPedido(req, res) {
       const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
-          user: "bautistagonzalezlazo@gmail.com",
-          pass: "jkxg gzcs tthg llsr",
+          user: "nipponmacetas@gmail.com",
+          pass: "efii hibd lhnl eafs",
         },
       });
 
