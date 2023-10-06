@@ -9,7 +9,7 @@ app.use(cors({
   }));
 
 mercadopago.configure({
-	access_token:'TEST-6052064161175970-100515-84875ac212ab24afa5fb0682d78ae91a-420293827'
+	access_token:'APP_USR-7421639621568939-100512-467d3652b2b12eaf7ff4434c563b1177-737047721'
 
 })
 
