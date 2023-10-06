@@ -1,5 +1,5 @@
 import { auth, db } from '@/firebasebautista'
-import { getAdditionalUserInfo, signOut } from 'firebase/auth'
+import {  signOut } from 'firebase/auth'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
@@ -8,6 +8,7 @@ import { get, ref } from 'firebase/database'
 
 const Sidebar = () => {
   const [user, setUser] = useState(null);
+  const [isAdmin, setIsAdmin] = useState(false);
 
 
 
@@ -21,6 +22,21 @@ const Sidebar = () => {
 // Manejo de errores, si es necesario
 });
 }
+useEffect(() => {
+  // Obtiene el ID del usuario del almacenamiento local.
+  const userId = localStorage.getItem('userId');
+
+  // Consulta la base de datos de Firebase Realtime Database para obtener el usuario.
+  const userRef = ref(db, `usuarios/${userId}`);
+  get(userRef).then((snapshot) => {
+    // Si el usuario existe, establece el valor de la variable de estado admin.
+    if (snapshot.exists()) {
+      const userData = snapshot.val();
+      console.log(userData)
+      setIsAdmin(userData.admin);
+    }
+  });
+}, [user]);
 
 
 
@@ -40,6 +56,13 @@ const Sidebar = () => {
             <li> <Link className='link-sidebar' href='/dashboard/carrito'> Carrito </Link></li>
             <li> <Link className='link-sidebar' href='/dashboard/pedidos'>  Historial Pedidos  </Link></li>
             {/* <li> Facturas </li> */}
+            {isAdmin === true && (
+                <>
+            <li> <Link className='link-sidebar' href='/dashboard/admins/pedidosPendientes'> Pedidos  </Link>  </li>
+            <li> <Link className='link-sidebar' href='/dashboard/admin/crearProductos'> Crear producto </Link></li>
+                </>
+         
+        )}
            
           
         </ul>
