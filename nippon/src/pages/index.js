@@ -1,3 +1,4 @@
+import PopUpLand from "@/commons/PopUpLandbautista";
 import CasiFooter from "@/components/Index/CasiFooterbautista";
 import Catalogo from "@/components/Index/Catalogobautista";
 import Diseno from "@/components/Index/Disenobautista";
@@ -19,6 +20,7 @@ import Swal from 'sweetalert2'
 export default function Home() {
   const [usuario,setUsuario] = useState('')
   const [nombre,setNombre] =useState('')
+  const [abierto,setAbierto] = useState(false)
 
   
   
@@ -44,12 +46,7 @@ export default function Home() {
     
     const timeoutId = setTimeout(() => {
 
-      Swal.fire({
-        icon: 'question',
-        title: 'Tambien tenemos tienda en mercadoShops',
-        text: 'Mira nuestro catalogo en mercadoShops',
-        footer: '<a href="https://www.mercadolibre.com.ar/">Ir a mercadoShops</a>'
-      })
+     setAbierto(true)
       
     }, tiempoEspera);
 
@@ -60,6 +57,7 @@ export default function Home() {
   },[])
   return (
     <>
+    {abierto ? <PopUpLand/> : ''}
     <Navbar usuario={usuario}/>
     <PrimerSeccion/>
     <Diseno/>

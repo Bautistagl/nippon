@@ -132,12 +132,20 @@ catch (error) {
             <span> Altura: {producto.alto} </span>
             <span> Capacidad: 100dm3</span>
         </div>
+        <div className="circle-container">
+    <div className="circle blue"></div>
+    <div className="circle red"></div>
+    <div className="circle green"></div>
+    <div className="circle yellow"></div>
+    <div className="circle orange"></div>
+  </div>
         <div className='botonera-cantidad'>
 
         <button onClick={()=>{bajarCantidad(producto.nombre)}}> - </button>
           <div>  CANTIDAD:{productoCantidad[producto.nombre]} </div>
           <button onClick={()=>{aumentarCantidad(producto.nombre)}}> + </button>
         </div>
+     
             <button className='agregar-button' onClick={()=>{agregarProducto(producto,productoCantidad[producto.nombre])}}> Agregar al carrito</button>
     </div>
   )

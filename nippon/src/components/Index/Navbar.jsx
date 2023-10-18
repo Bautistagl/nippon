@@ -14,6 +14,7 @@ const Navbar = ({usuario}) => {
             <li> Nosotros </li>
             <li> Catalogo</li>
             <li> Clientes </li>
+            <li> MercadoShops </li>
         </ul>
 
       {usuario == '' ? 
@@ -23,7 +24,7 @@ const Navbar = ({usuario}) => {
         </Link>
       :
       <Link href='/dashboard'>
-      <img className='icono-navbar' alt='' src='/home.png'/> : 
+      <img className='icono-navbar' alt='' src='/home.png'/> 
       </Link>
       
       }

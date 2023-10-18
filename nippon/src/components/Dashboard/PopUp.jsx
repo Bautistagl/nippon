@@ -183,9 +183,21 @@ const PopUp = ({ usuario,pago,setPago,nombre,email,telefono,envio,direccion }) =
         </button>
       ))}
     </div>
-      <h1 >Total: {totalCarrito}</h1>
+      <h1 >Total: ${totalCarrito}</h1>
       <div style={{display:'flex',justifyContent:'center'}}>
-      {totalCarrito && botonSeleccionado !== 'MercadoPago' && botonSeleccionado &&  <button className='button-popup2' onClick={()=>{finalizarCompra()}}> Realizar pedido</button> }
+
+        {botonSeleccionado === 'Transferencia' &&
+        <div>
+         <div style={{display:'flex',}}>
+          <span> CBU: 12321321312 </span> 
+           <span>Alias: nippon.macetas.mp</span>
+           </div>
+           <div> Si queres podes mandarnos el comprobante para agilizar el proceso</div>
+        </div>
+         }
+      </div>
+      <div style={{display:'flex',justifyContent:'center'}}>
+      {totalCarrito && botonSeleccionado !== 'MercadoPago' && botonSeleccionado &&  <button className='button-popup2' onClick={()=>{finalizarCompra()}}> Enviar comprobante</button> }
       
       {totalCarrito && botonSeleccionado === 'MercadoPago' &&  <BotonPrueba finalizarCompra={finalizarCompra}   precio={totalCarrito} /> }
      

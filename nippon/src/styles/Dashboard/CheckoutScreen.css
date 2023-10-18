@@ -64,6 +64,46 @@
     border: 5px solid #DAA666;
     z-index: 1000;
   }
+  .popupLand{
+    position: fixed;
+    top: 20%;
+    right: 26%;
+    height: 350px;
+    width: 40vw;
+    background-color:white;
+    margin: auto;
+    color: black;
+    border-radius: 10px;
+    border: 5px solid #DAA666;
+    z-index: 1000;
+  }
+  .textos-popupLand{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  .textos-popupLand h4,span{
+    margin: auto;
+  }
+  .button-popupLand{
+    display: flex;
+    background-color: #DAA666;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    justify-content: center;
+    text-align: center;
+    font-size: 1rem;
+    border: none;
+    margin-top: 50px;
+    align-items: center;
+    border-radius:50px;
+    padding: 1vh 3vw;
+    cursor: pointer;
+  }
   .popup *{
     
     margin-left: 10px;
