@@ -11,8 +11,21 @@ import Link from "next/link"
   const [loading, setLoading] = useState(true)
   
 
+  const handleMail = async () => {
+    try {
+      const mailUsuario = {
+        mail:usuario2
+      };
+      const response = await back.post('/webhook');
+      console.log(response,'AAAAAAA')
+    } catch (error) {
+      
+      console.error(error); 
+     
+    }
+  };
   const handleSubmit = async () => {
-    // await finalizarCompra();
+    
     window.location.href = url;
   };
   useEffect(() => {

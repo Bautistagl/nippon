@@ -60,6 +60,13 @@ a {
   select:focus{
     outline: none;
   }
+  .aviso-pago{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    margin-top: 100px;
+  }
 
   @media only screen and (max-width: 600px) {
     .index-container{

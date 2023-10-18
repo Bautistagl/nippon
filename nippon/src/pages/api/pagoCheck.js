@@ -1,11 +1,11 @@
 const nodemailer = require("nodemailer");
 
-async function nodemailerSend(req, res) {
+async function pagoCheck(req, res) {
   const { method, body } = req;
 
   switch (method) {
     case "POST": {
-      const jsonObject = JSON.stringify(body);
+      
       const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
@@ -16,16 +16,15 @@ async function nodemailerSend(req, res) {
 
       const mailOptions = {
         from: "Nippon",
-        to: `bautistagonzalezlazo@gmail.com`,
+        to: `${body.email}`,
         subject: "Pedido recibido",
-        text: jsonObject,
         template: `
         <html>
           <head>
-            <title>Nuevo pedido!</title>
+            <title>Muchas gracias por su compra!</title>
           </head>
           <body>
-            <h1>Llego un nuevo pedido de pirulo</h1>
+            <h1>Ya recibimos su pago y estamos armando su pedido</h1>
             <p>importe total $100000</p>
           </body>
         </html>
@@ -49,4 +48,4 @@ async function nodemailerSend(req, res) {
   }
 }
 
-export default nodemailerSend;
+export default pagoCheck;
