@@ -12,7 +12,7 @@ import Link from "next/link"
   
 
   const handleSubmit = async () => {
-    await finalizarCompra();
+    // await finalizarCompra();
     window.location.href = url;
   };
   useEffect(() => {
