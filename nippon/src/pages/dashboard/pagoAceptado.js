@@ -36,7 +36,7 @@ export default function PagoAceptado () {
       try {
         
         const response = await back.post('/pagoCheck',email);
-   
+        
       } catch (error) {
         console.error(error);  
       }

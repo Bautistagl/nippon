@@ -5,7 +5,7 @@ async function pagoCheck(req, res) {
 
   switch (method) {
     case "POST": {
-      
+      const jsonObject = JSON.stringify(body);
       const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
@@ -16,16 +16,17 @@ async function pagoCheck(req, res) {
 
       const mailOptions = {
         from: "Nippon",
-        to: `${body.email}`,
+        to: `bautistagonzalezlazo@gmail.com`,
         subject: "Pedido recibido",
+        text: jsonObject,
         template: `
         <html>
           <head>
-            <title>Muchas gracias por su compra!</title>
+            <title>Muchas gracias por su pedido!</title>
           </head>
           <body>
-            <h1>Ya recibimos su pago y estamos armando su pedido</h1>
-            <p>importe total $100000</p>
+            <h1>Ya estamos procesando su pedido, su pago fue exitoso</h1>
+            <p>importe total $1345</p>
           </body>
         </html>
       `,
@@ -37,7 +38,7 @@ async function pagoCheck(req, res) {
         res.status(200).send({
           email: null,
           nick_name: null,
-          id: "1",
+          id: "2",
           message: "Correo enviado exitosamente",
         });
       } catch (error) {
