@@ -56,7 +56,7 @@ async function respuestaFormulario(req, res) {
           attachments: [
             {
               filename:'pdfPrueba.pdf',
-              path: path.join(serverRuntimeConfig.SERVER_PUBLIC_DIR, 'pdfPrueba.pdf'),
+              path:'/vercel/site/public/pdfPrueba.pdf',
               contentType: 'application/pdf'
             }
           ]
@@ -65,7 +65,7 @@ async function respuestaFormulario(req, res) {
 
       try {
         await transporter.sendMail(mailOptions);
-        console.log(path.join(__dirname, '../public/pdfPrueba.pdf'));
+      
         res.status(200).send({
           email: null,
           nick_name: null,
