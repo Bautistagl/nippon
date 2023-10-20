@@ -81,4 +81,4 @@ async function respuestaPago(req, res) {
   }
 }
 
-export default respuestaFormulario;
+export default respuestaPago;

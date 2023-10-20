@@ -46,6 +46,7 @@ const PedidosPendientesScreen = () => {
 
       const actualizarEstado = async (pedido, nuevoEstado) => {
         try {
+          console.log(nuevoEstado)
           const data = {
             mail:pedido.mail,
             nombre:pedido.nombre
