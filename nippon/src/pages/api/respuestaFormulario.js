@@ -1,9 +1,9 @@
 const nodemailer = require("nodemailer");
 
+const fs = require('fs');
 
 const path = require('path');
-const getConfig = require('next/config');
-const { serverRuntimeConfig } = getConfig();
+
 
 async function respuestaFormulario(req, res) {
   const { method, body } = req;
@@ -33,6 +33,7 @@ async function respuestaFormulario(req, res) {
           pass: "efii hibd lhnl eafs",
         },
       });
+      var filePath = path.join(__dirname, 'pdfPrueba.pdf');
 
       const mailOptions = {
         from: "Nippon",
@@ -56,7 +57,7 @@ async function respuestaFormulario(req, res) {
           attachments: [
             {
               filename:'pdfPrueba.pdf',
-              path:'/vercel/site/public/pdfPrueba.pdf',
+              streamSource: fs.createReadStream(filePath),
               contentType: 'application/pdf'
             }
           ]
@@ -74,7 +75,7 @@ async function respuestaFormulario(req, res) {
         });
       } catch (error) {
         console.error("Error:", error);
-        res.status(500).send(error);
+        res.status(500).send(error,__dirname,'ESTO ES DIRNAME');
       }
     }
     
