@@ -33,7 +33,7 @@ async function respuestaFormulario(req, res) {
           pass: "efii hibd lhnl eafs",
         },
       });
-      var filePath = path.join(__dirname, 'pdfPrueba.pdf');
+    
 
       const mailOptions = {
         from: "Nippon",
@@ -54,13 +54,13 @@ async function respuestaFormulario(req, res) {
           Saludos cordsales,
           Nippon`,
           html:mensajeHtml,
-          attachments: [
-            {
-              filename:'pdfPrueba.pdf',
-              streamSource: fs.createReadStream(filePath),
-              contentType: 'application/pdf'
-            }
-          ]
+          // attachments: [
+          //   {
+          //     filename:'pdfPrueba.pdf',
+          //     streamSource: fs.createReadStream(filePath),
+          //     contentType: 'application/pdf'
+          //   }
+          // ]
        
       };
 
@@ -75,7 +75,7 @@ async function respuestaFormulario(req, res) {
         });
       } catch (error) {
         console.error("Error:", error);
-        res.status(500).send(error,__dirname,'ESTO ES DIRNAME');
+        res.status(500).send(error);
       }
     }
     
