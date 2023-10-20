@@ -1,6 +1,10 @@
 const nodemailer = require("nodemailer");
-import fs from 'fs';
-import path from 'path';
+
+
+const path = require('path'); 
+
+
+const publicDir = path.join(__dirname, 'public');
 
 async function respuestaFormulario(req, res) {
   const { method, body } = req;
@@ -53,7 +57,7 @@ async function respuestaFormulario(req, res) {
           attachments: [
             {
               filename:'pdfPrueba.pdf',
-              path: path.join(__dirname, '../../../../public/pdfPrueba.pdf'), // <= Here
+              path: path.join(publicDir, 'pdfPrueba.pdf'),
               contentType: 'application/pdf'
             }
           ]
