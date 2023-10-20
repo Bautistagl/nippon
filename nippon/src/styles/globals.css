@@ -50,6 +50,18 @@ a {
     background-color: #315253;
     justify-content: center;
   }
+  .whatsapp-icon {
+    position: fixed;
+    bottom: 20px; /* Ajusta la distancia desde abajo según tus preferencias */
+    right: 20px; /* Ajusta la distancia desde la derecha según tus preferencias */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  }
+  
+  .whatsapp-icon img {
+    width: 50px; /* Ajusta el tamaño del icono según tus preferencias */
+    height: auto; /* Para mantener la proporción original */
+    cursor: pointer;
+  }
 
   input:focus {
     outline: none;

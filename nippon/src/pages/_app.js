@@ -28,11 +28,11 @@ export default function App({ Component, pageProps }) {
         // Guarda el ID del usuario en el LocalStorage
         
         localStorage.setItem('userId', user.uid);
-        localStorage.setItem('email', user.email);
+        localStorage.setItem('emailNippon', user.email);
       } else {
         // El usuario ha cerrado sesión, borra el ID del usuario del LocalStorage
         localStorage.removeItem('userId');
-        localStorage.removeItem('email');
+        localStorage.removeItem('emailNippon');
       }
 
 

@@ -95,7 +95,7 @@ const Catalogo = ({usuario}) => {
         <span> Origami</span>
        </div>
        <div className='ejemplo-catalogo' >
-       <Image onClick={()=>getSakura()} style={{marginLeft:'100%',display:'flex',margin:' auto'}} width={60} height={120} alt='' src='/Origami.png'/>
+       <Image onClick={()=>getSakura()} style={{marginLeft:'100%',display:'flex',margin:' auto'}} width={50.5} height={92} alt='' src='/Origami.png'/>
         <span> Sakura</span>
        </div>
       

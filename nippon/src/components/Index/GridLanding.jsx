@@ -8,7 +8,7 @@ const GridLanding = () => {
         <Image style={{marginLeft:'50px',display:'flex',margin:'30px auto'}} width={200} height={60} alt='' src='/logoMarron.png'/> 
         <Image style={{marginLeft:'50px',display:'flex',margin:'10px auto'}} width={150} height={30} alt='' src='/letraMarron.png'/>    
         <span> breath and flow</span>
-        <div> Macetas. Muebles. Decohogar</div>
+        <div> Macetas</div>
          </div>
         <div className='div2'> </div>
         <div className='div3'> </div>

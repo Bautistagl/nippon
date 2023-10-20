@@ -29,6 +29,7 @@
     border-radius: 50%;
     display: flex;
     margin: auto;
+    height: 20vh;
 }
 @media only screen and (max-width: 600px) {
     .contenedor-iconos{

@@ -26,6 +26,7 @@ const Formularios = () => {
       };
       const response = await back.post('/respuestaFormulario',data);
       if(response){
+        console.log(response)
         Swal.fire({
           icon: 'success',
           title: 'Formulario enviado',

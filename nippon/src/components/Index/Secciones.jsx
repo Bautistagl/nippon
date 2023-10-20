@@ -7,9 +7,9 @@ const Secciones = () => {
 
     <div className="secciones">
       <div className="tres-fotos">
-        <div> <img alt='' src='/icono1.png' className='icono-iconos'/> </div>
-        <div> <img alt='' src='/icono2.png' className='icono-iconos'/> </div>
-        <div> <img alt='' src='/icono3.png' className='icono-iconos'/> </div>
+        <div> <img alt='' src='/1.svg' className='icono-iconos'/> </div>
+        <div> <img alt='' src='/2.svg' className='icono-iconos'/> </div>
+        <div> <img alt='' src='/3.svg' className='icono-iconos'/> </div>
       </div>
 
 
@@ -28,19 +28,19 @@ const Secciones = () => {
 
       <div className="tres-textos">
         <div className='texto-seccion'>
-          <h2> Calidad, diseño e innoviación</h2>
+          <h2>Simplicidad, belleza e innovacion.</h2>
           <p>
             Modernas macetas con amplia variedad de tamaños, para interior y exterior
           </p>
         </div>
         <div className='texto-seccion'>
-          <h2> Fabricación, embalado y transporte</h2>
+          <h2> De la fábrica a tu espacio, sin problemas.</h2>
           <p>
            Compromoiso con el trabajo completo, desde la fabricación hasta la entrega del producto
           </p>
         </div>
         <div className='texto-seccion'>
-          <h2> Líder en fabricación de macetas</h2>
+          <h2>Soluciones versátiles para todo tipo de ambientes.</h2>
           <p>
             Referente de macetas de terracota y plástico rotomodelado, con luz y cazuelas esmaltadas.
           </p>

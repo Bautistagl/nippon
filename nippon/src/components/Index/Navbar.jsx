@@ -14,7 +14,9 @@ const Navbar = ({usuario}) => {
             <li> Nosotros </li>
             <li> Catalogo</li>
             <li> Clientes </li>
-            <li> MercadoShops </li>
+            
+            <li> <Link href='https://mecaglass.mercadoshops.com.ar'>MercadoShops</Link>  </li>
+           
         </ul>
 
       {usuario == '' ? 

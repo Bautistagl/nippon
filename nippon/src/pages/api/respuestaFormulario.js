@@ -6,11 +6,18 @@ async function respuestaFormulario(req, res) {
   const { method, body } = req;
   let mensajeHtml = `<html>
   <head>
-    <title>Estimado ${body.nombre}</title>
+    <title>Formulario Nippon</title>
   </head>
   <body>
-    <h1>Estimado ${body.nombre}</h1>
-    <p>Your paragraph</p>
+    <h2>Estimado ${body.nombre},</h2>
+    <p>Le dejo adjuntado los catalogos</p>
+    <p>Que productos les interesa?</p>
+    <p>Te solicito la razon social</p>
+    <p>Cuentas con página web?</p>
+    <p>Saludos Cordiales.</p>
+    <p>https://nippon-lemon.vercel.app/</p>
+    <p>nipponmacetas@gmail.com</p>
+    <p>+54 9 11 4927-7864</p>
   </body>
 </html>`
   switch (method) {
@@ -64,7 +71,7 @@ async function respuestaFormulario(req, res) {
         });
       } catch (error) {
         console.error("Error:", error);
-        res.status(500).send("Error al enviar el correo");
+        res.status(500).send(error);
       }
     }
     

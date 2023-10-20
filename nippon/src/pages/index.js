@@ -42,7 +42,7 @@ export default function Home() {
     else{
       
     }
-    const tiempoEspera = 15000; // 15 segundos (en milisegundos)
+    const tiempoEspera = 10000; // 15 segundos (en milisegundos)
     
     const timeoutId = setTimeout(() => {
 
@@ -57,8 +57,13 @@ export default function Home() {
   },[])
   return (
     <>
-    {abierto ? <PopUpLand/> : ''}
+    {abierto ? <PopUpLand setAbierto={setAbierto} abierto={abierto}/> : ''}
     <Navbar usuario={usuario}/>
+    <div className="whatsapp-icon">
+        <a href="https://wa.me/1149277864/?text=Buenos Dias" target="_blank" rel="noopener noreferrer">
+          <img src="/logoWhatsapp.png" alt="WhatsApp" />
+        </a>
+      </div>
     <PrimerSeccion/>
     <Diseno/>
     <GridLanding/>

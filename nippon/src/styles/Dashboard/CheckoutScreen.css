@@ -66,9 +66,9 @@
   }
   .popupLand{
     position: fixed;
-    top: 20%;
+    top:10%;
     right: 26%;
-    height: 350px;
+    height: 550px;
     width: 40vw;
     background-color:white;
     margin: auto;
@@ -103,6 +103,14 @@
     border-radius:50px;
     padding: 1vh 3vw;
     cursor: pointer;
+  }
+  .fotos-popUpLand{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .fotos-popUpLand img{
+    margin: 15px auto;
   }
   .popup *{
     
