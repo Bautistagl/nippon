@@ -1,9 +1,9 @@
 const nodemailer = require("nodemailer");
 
-const fs = require('fs');
 
 const path = require('path');
-
+const getConfig = require('next/config');
+const { serverRuntimeConfig } = getConfig();
 
 async function respuestaFormulario(req, res) {
   const { method, body } = req;
@@ -33,7 +33,6 @@ async function respuestaFormulario(req, res) {
           pass: "efii hibd lhnl eafs",
         },
       });
-    
 
       const mailOptions = {
         from: "Nippon",
@@ -54,13 +53,13 @@ async function respuestaFormulario(req, res) {
           Saludos cordsales,
           Nippon`,
           html:mensajeHtml,
-          // attachments: [
-          //   {
-          //     filename:'pdfPrueba.pdf',
-          //     streamSource: fs.createReadStream(filePath),
-          //     contentType: 'application/pdf'
-          //   }
-          // ]
+          attachments: [
+            {
+              filename:'pdfPrueba.pdf',
+              path:'/nippon/public/pdfPrueba.pdf',
+              contentType: 'application/pdf'
+            }
+          ]
        
       };
 
