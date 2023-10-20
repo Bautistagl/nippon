@@ -1,3 +1,4 @@
+import back from '@/config2/axiosbautista';
 import { db } from '@/firebasebautista';
 import { get, ref, set } from 'firebase/database';
 import React, { useEffect, useState } from 'react'
@@ -23,7 +24,7 @@ const PedidosPendientesScreen = () => {
       
           if (pedidos.length > 0) {
             setPedidosData(pedidos);
-            console.log(pedidosData)
+            
           } else {
             setPedidosData([]);
           }
@@ -34,27 +35,40 @@ const PedidosPendientesScreen = () => {
       useEffect(()=>{
         mostrarPedidos()
       },[])
-      const handleMail = async () => {
-        try {
-          const response = await back.post('/nodemailerSend');
-          console.log(response.data);  // Aquí puedes manejar la respuesta si es necesario
-        } catch (error) {
-          console.error(error);  // Maneja cualquier error que ocurra durante la solicitud
-        }
-      }
+      // const handleMail = async () => {
+      //   try {
+      //     const response = await back.post('/respuestaPago');
+      //       // Aquí puedes manejar la respuesta si es necesario
+      //   } catch (error) {
+      //     console.error(error);  // Maneja cualquier error que ocurra durante la solicitud
+      //   }
+      // }
 
       const actualizarEstado = async (pedido, nuevoEstado) => {
         try {
+          const data = {
+            mail:pedido.mail,
+            nombre:pedido.nombre
+    
+          };
           // Update the local state first
           const updatedPedidosData = pedidosData.map((p) =>
             p === pedido ? { ...p, estado: nuevoEstado } : p
           );
           setPedidosData(updatedPedidosData);
-    
+          
+          if (nuevoEstado === "Armado") {
+            try {
+              await back.post('/respuestaPago',data);
+             
+            } catch (error) {
+              console.log('Error al enviar la solicitud POST al servidor de armado:', error);
+            }
+          }
           // Update the database
           const usuarioRef = ref(db, `usuarios/${pedido.cliente}/pedidos/${pedido.id}`);
           await set(usuarioRef, { ...pedido, estado: nuevoEstado });
-          handleMail()
+         
           console.log('Estado actualizado en la base de datos');
         } catch (error) {
           console.log('Error al actualizar el estado en la base de datos:', error);

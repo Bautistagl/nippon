@@ -19,20 +19,20 @@ const Sidebar = () => {
   router.push('/');
 })
 .catch((error) => {
-// Manejo de errores, si es necesario
+
 });
 }
 useEffect(() => {
-  // Obtiene el ID del usuario del almacenamiento local.
+
   const userId = localStorage.getItem('userId');
 
-  // Consulta la base de datos de Firebase Realtime Database para obtener el usuario.
+
   const userRef = ref(db, `usuarios/${userId}`);
   get(userRef).then((snapshot) => {
-    // Si el usuario existe, establece el valor de la variable de estado admin.
+
     if (snapshot.exists()) {
       const userData = snapshot.val();
-      console.log(userData)
+     
       setIsAdmin(userData.admin);
     }
   });

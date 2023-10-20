@@ -94,6 +94,7 @@ const PopUp = ({ usuario,pago,setPago,nombre,email,telefono,envio,direccion }) =
           fecha: fechaActual,
           cliente:usuario,
           nombre:nombre,
+          mail:email,
           estado: 'Pago pendiente',
         };
   
