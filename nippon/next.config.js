@@ -4,6 +4,9 @@ const nextConfig = {
   cors: {
     origin: ['https://nippon-lemon.vercel.app'],
   },
+  serverRuntimeConfig: {
+    SERVER_PUBLIC_DIR: 'public\pdfPrueba.pdf', 
+  },
   async headers() {
     return [
       {

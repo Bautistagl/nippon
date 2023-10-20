@@ -1,10 +1,9 @@
 const nodemailer = require("nodemailer");
 
 
-const path = require('path'); 
-
-
-const publicDir = path.join(__dirname, 'public');
+const path = require('path');
+const getConfig = require('next/config');
+const { serverRuntimeConfig } = getConfig();
 
 async function respuestaFormulario(req, res) {
   const { method, body } = req;
@@ -57,7 +56,7 @@ async function respuestaFormulario(req, res) {
           attachments: [
             {
               filename:'pdfPrueba.pdf',
-              path: path.join(publicDir, 'pdfPrueba.pdf'),
+              path: path.join(serverRuntimeConfig.SERVER_PUBLIC_DIR, 'pdfPrueba.pdf'),
               contentType: 'application/pdf'
             }
           ]
