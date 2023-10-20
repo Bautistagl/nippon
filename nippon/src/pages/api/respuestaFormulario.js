@@ -56,7 +56,7 @@ async function respuestaFormulario(req, res) {
           attachments: [
             {
               filename:'pdfPrueba.pdf',
-              path:'/nippon/public/pdfPrueba.pdf',
+              path:'/pdfPrueba.pdf',
               contentType: 'application/pdf'
             }
           ]
