@@ -87,6 +87,12 @@
   .textos-popupLand h4,span{
     margin: auto;
   }
+  .boton-cerrar{
+    display: flex;
+    margin: 20px;
+    margin-left: auto;
+    cursor: pointer;
+  }
   .button-popupLand{
     display: flex;
     background-color: #DAA666;

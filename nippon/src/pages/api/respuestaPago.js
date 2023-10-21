@@ -16,8 +16,6 @@ async function respuestaPago(req, res) {
     <p>Le informamos que el pago ha sido procesado con exito, puede visualizar el estado de su pedido en 'Historial pedidos'.</p>
     <p>https://nippon-lemon.vercel.app/dashboard/pedidos</p>
     <p>Saludos Cordiales.</p>
-
-    <p>Saludos Cordiales.</p>
     <p>https://nippon-lemon.vercel.app/</p>
     <p>nipponmacetas@gmail.com</p>
     <p>+54 9 11 4927-7864</p>
@@ -37,7 +35,7 @@ async function respuestaPago(req, res) {
       const mailOptions = {
         from: "Nippon",
         to: `${body.mail}`,
-        subject: "Formulario distribuidor",
+        subject: "Pago exitoso Nippon",
         text:`Estimado ${body.nombre},
          Muchas gracias por su interés en nuestros productos.
          Nosotros tenemos 2 grandes líneas de productos: 

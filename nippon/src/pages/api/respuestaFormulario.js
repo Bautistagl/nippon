@@ -53,13 +53,13 @@ async function respuestaFormulario(req, res) {
           Saludos cordsales,
           Nippon`,
           html:mensajeHtml,
-          // attachments: [
-          //   {
-          //     filename:'pdfPrueba.pdf',
-          //     path:'/pdfPrueba.pdf',
-          //     contentType: 'application/pdf'
-          //   }
-          // ]
+          attachments: [
+            {
+              filename:'pdfPrueba.pdf',
+              path:'https://nippon-lemon.vercel.app/pdfPrueba.pdf',
+              contentType: 'application/pdf'
+            }
+          ]
        
       };
 

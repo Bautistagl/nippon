@@ -20,6 +20,7 @@ const PopUpLand = ({abierto,setAbierto}) => {
 
   return (
     <div className="popupLand">
+           <Image className='boton-cerrar'  alt='' src='/cerrar2.png' height={30} width={30} onClick={()=>setAbierto(false)}/>
         <div className='fotos-popUpLand' >
 
           <div style={{display:'flex',flexDirection:'column',}}>
@@ -29,7 +30,6 @@ const PopUpLand = ({abierto,setAbierto}) => {
 
 
            <Image alt='' width={300} height={105} src='/logoMercadoShops.webp'/>
-           {/* <Image style={{cursor:'pointer',marginLeft:'80px',marginTop:'10px'}} alt='' src='/cerrar2.png' height={30} width={30} onClick={()=>setAbierto(false)}/> */}
         </div>
         <div className='textos-popupLand'>
            <h4> También tenemos tienda en Mercado Shops</h4> 
