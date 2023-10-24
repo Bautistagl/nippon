@@ -24,12 +24,12 @@ const PopUpLand = ({abierto,setAbierto}) => {
         <div className='fotos-popUpLand' >
 
           <div style={{display:'flex',flexDirection:'column',}}>
-            <Image alt='' width={200} height={55} src='/logoMarronOk.png'/>
-            <Image style={{marginTop:'-5px'}} alt='' width={130} height={25} src='/letrasMarronOk.png'/>
+            <Image className='fotos-popup-nippon' alt='' width={200} height={55} src='/logoMarronOk.png'/>
+            <Image className='fotos-popup-nippon2' style={{marginTop:'-5px'}} alt='' width={130} height={25} src='/letrasMarronOk.png'/>
           </div>
 
 
-           <Image alt='' width={300} height={105} src='/logoMercadoShops.webp'/>
+           <Image className='fotos-popup-nippon3' alt='' width={300} height={105} src='/logoMercadoShops.webp'/>
         </div>
         <div className='textos-popupLand'>
            <h4> También tenemos tienda en Mercado Shops</h4> 

@@ -192,7 +192,53 @@
   
 
   }
+  @media only screen and (max-width:1024px) {
+
+    .fotos-popup-nippon{
+      width: 150px;
+    }
+    .fotos-popup-nippon2{
+      width: 100px ;
+      height: 20px;
+    }
+    .fotos-popup-nippon3{
+      width: 220px ;
+      height: 60px;
+    }
+    .textos-popupLand h4,span{
+      text-align: center;
+      font-size: 0.8rem;
+    }
+    .button-popupLand{
+      width: 80%;
+    }
+
+
+  }
   
+
+  @media only screen and (max-width:600px) {
+    .fotos-popup-nippon{
+      width: 140px;
+      height: 35px;
+    }
+    .fotos-popup-nippon2{
+      width: 100px ;
+      height: 20px;
+    }
+    .fotos-popup-nippon3{
+      width: 160px ;
+      height: 50px;
+    }
+    .button-popupLand{
+      font-size: 0.8rem;
+    }
+    .popupLand{
+      height: 500px;
+    }
+
+  }
+
   @media only screen and (max-width:550px) {
     .checkout-screen{
       width: 80%;
@@ -231,3 +277,4 @@
       width: 50vw;
     }
   }
+ 

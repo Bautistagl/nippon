@@ -58,7 +58,13 @@ async function respuestaFormulario(req, res) {
               filename:'pdfPrueba.pdf',
               path:'https://nippon-lemon.vercel.app/pdfPrueba.pdf',
               contentType: 'application/pdf'
+            },
+            {
+              filename:'pdfPrueba.pdf',
+              path:'https://nippon-lemon.vercel.app/pdfPrueba.pdf',
+              contentType: 'application/pdf'
             }
+
           ]
        
       };

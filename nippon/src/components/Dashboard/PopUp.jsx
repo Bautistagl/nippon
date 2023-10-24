@@ -63,9 +63,9 @@ const PopUp = ({ usuario,pago,setPago,nombre,email,telefono,envio,direccion }) =
         mail:usuario2
       };
       const response = await back.post('/webhook');
-      console.log(response,'AAAAAAA')
+     
     } catch (error) {
-      console.log('ESTO ES ERROR EN TERMINAR COMPRA')
+    
       console.error(error); 
      
     }
@@ -193,7 +193,7 @@ const PopUp = ({ usuario,pago,setPago,nombre,email,telefono,envio,direccion }) =
           <span> CBU: 12321321312 </span> 
            <span>Alias: nippon.macetas.mp</span>
            </div>
-           <div> Si queres podes mandarnos el comprobante para agilizar el proceso</div>
+           <div> Adjuntar comprobante una vez realizada la compra</div>
         </div>
          }
       </div>

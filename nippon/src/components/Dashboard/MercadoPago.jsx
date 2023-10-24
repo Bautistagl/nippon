@@ -56,12 +56,12 @@ import Link from "next/link"
 
   return (
     <div>
-   {/* <Link href={`${url}`}>
-        </Link>  */}
+   <Link href={`${url}`}>
             <button className="button-popup2" onClick={handleSubmit} >
 
                 Pagar con mercado pago
             </button>
+        </Link> 
         
         
    
