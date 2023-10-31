@@ -1,6 +1,6 @@
 import back from '@/config2/axiosbautista';
 import { db } from '@/firebasebautista';
-import { get, ref, set } from 'firebase/database';
+import { get, ref, remove, set } from 'firebase/database';
 import React, { useEffect, useState } from 'react'
 
 const PedidosPendientesScreen = () => {
@@ -30,6 +30,21 @@ const PedidosPendientesScreen = () => {
           }
         } catch (error) {
           console.log('Error al obtener los pedidos:', error);
+        }
+      };
+      const borrarPedido = async (pedido) => {
+        try {
+          // Elimina el pedido de la base de datos
+          const usuarioRef = ref(db, `usuarios/${pedido.cliente}/pedidos/${pedido.id}`);
+          await remove(usuarioRef);
+    
+          // Actualiza el estado local eliminando el pedido
+          const updatedPedidosData = pedidosData.filter((p) => p.id !== pedido.id);
+          setPedidosData(updatedPedidosData);
+    
+          console.log('Pedido eliminado de la base de datos');
+        } catch (error) {
+          console.log('Error al eliminar el pedido en la base de datos:', error);
         }
       };
       useEffect(()=>{
@@ -105,8 +120,12 @@ const PedidosPendientesScreen = () => {
                 <option value="Camino">En camino</option>
                 <option value="Completado">Entregado</option>
               </select>
+            <button onClick={()=>borrarPedido(pedido)}>Borrar pedido </button>
             </div>
           </div>
+            
+            
+          
         ))}
       </div>
     </div>

@@ -15,7 +15,27 @@
 }
 .datos-pedido select{
     width: 20vw;
-    margin-left: 0 !important;
+    margin-left: 0 ;
+    background-color: #315253;
+    color: white;
+    margin-top: auto;
+    margin-bottom: auto;
+   
+}
+.datos-pedido button{
+    display: flex;
+    width: 100%;
+    padding: 0;
+    background-color: #315253;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    margin: auto 2px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    
 }
 .pedido{
     border: 2px solid black;

@@ -63,6 +63,9 @@ const Formularios = () => {
         <input required className='input-login' onChange={(e)=>setNombre(e.target.value)} placeholder='Nombre'/>
         <input required className='input-login' onChange={(e)=>setEmail(e.target.value)} placeholder='Email'/>
         <input required className='input-login' onChange={(e)=>setEmpresa(e.target.value)} placeholder='Empresa'/>
+        <input required className='input-login' onChange={(e)=>setEmpresa(e.target.value)} placeholder='Razon Social'/>
+        <input required className='input-login' onChange={(e)=>setEmpresa(e.target.value)} placeholder='Pagina web(opcional)'/>
+        <textarea style={{height:'80px'}} required className='input-login' onChange={(e) => setMensaje(e.target.value)} placeholder='Productos en los que estan interesados' />
         <textarea style={{height:'150px'}} required className='input-login' onChange={(e) => setMensaje(e.target.value)} placeholder='Mensaje' />
         <button className='boton-login' type='submit'> Enviar formulario</button>
         </form>

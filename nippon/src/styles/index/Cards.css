@@ -28,6 +28,14 @@
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
 }
+.card button{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 10px;
+    background-color: #DAA666 !important;
+    font-size: 1rem;
+}
 .card span{
     margin: 0;
 }

@@ -1,15 +1,12 @@
-import { db } from '@/firebasebautista';
-import { get, ref, remove, update } from 'firebase/database';
-import Link from 'next/link';
-import React, { useState } from 'react'
 
-const CardsLanding = ({producto}) => {
+import Link from 'next/link'
+import React from 'react'
+
+const CardsDeco = ({producto}) => {
   
   return (
     <div className='card'>
-        <Link href='https://mecaglass.mercadoshops.com.ar'>
         <img alt='' src='/fotoProducto.png' className='card-landing-foto'/>
-        </Link>
         <div className='info-cards-landing' >
             <h2>   {producto.nombre}  </h2>
             {producto.ancho ? <span> Ancho: {producto.ancho}  </span> : '' }
@@ -18,10 +15,12 @@ const CardsLanding = ({producto}) => {
             <span> Altura: {producto.alto} </span>
             <span> Capacidad: 100dm3</span>
         </div>
-   
+        <Link href="https://wa.me/1149277864/?text=Buenos" target="_blank" rel="noopener noreferrer" >
+        <button>Cotización</button>
+        </Link>
            
     </div>
   )
 }
 
-export default CardsLanding
+export default CardsDeco

@@ -7,13 +7,14 @@ const Navbar = ({usuario}) => {
     <div style={{width:'100%',background:'#315253',borderBottom:'2px solid white'}}>
        
     <div className='navbar'>
-      
+        <Link href='/'>
         <Image  width={100} height={25} alt='' src='/letrasBien.png'/>
+        </Link>
         <ul className='ul-navbar'>
             <li> Inicio </li>
             <li> Nosotros </li>
             <li> Catalogo</li>
-            <li> Clientes </li>
+            <li> <Link href='/decoracion'> Decoracion </Link>  </li>
             
             <li> <Link href='https://mecaglass.mercadoshops.com.ar'>MercadoShops</Link>  </li>
            

@@ -185,22 +185,29 @@ const PopUp = ({ usuario,pago,setPago,nombre,email,telefono,envio,direccion }) =
       ))}
     </div>
       <h1 >Total: ${totalCarrito}</h1>
-      <div style={{display:'flex',justifyContent:'center'}}>
+      <div >
 
-        {botonSeleccionado === 'Transferencia' &&
-        <div>
-         <div style={{display:'flex',}}>
-          <span> CBU: 12321321312 </span> 
-           <span>Alias: nippon.macetas.mp</span>
-           </div>
+        {botonSeleccionado === 'Transferencia' ||  botonSeleccionado === 'Deposito Bancario' ?
+        <div className='datos-banco'>
+         
+          <div> CBU: <span>12321321312 </span> </div> 
+           <div>Alias: <span>nippon.macetas.mp</span></div>
+           <div>Propietario: <span>Mecaglass S.A.</span></div>
+           
            <div> Adjuntar comprobante una vez realizada la compra</div>
-        </div>
+        </div> : ''
          }
       </div>
       <div style={{display:'flex',justifyContent:'center'}}>
-      {totalCarrito && botonSeleccionado !== 'MercadoPago' && botonSeleccionado &&  <button className='button-popup2' onClick={()=>{finalizarCompra()}}> Enviar comprobante</button> }
+      {totalCarrito && botonSeleccionado !== 'MercadoPago' && botonSeleccionado !== 'Efectivo' && botonSeleccionado ? <button className='button-popup2' onClick={()=>{finalizarCompra()}}> Enviar comprobante</button> : ''}
+      {totalCarrito && botonSeleccionado === 'Efectivo' && botonSeleccionado ?
+      <Link href="https://wa.me/1149277864/?text=Hola que tal, queria arreglar una fecha para pagar en efectivo" target="_blank" rel="noopener noreferrer">
+       <button className='button-popup2'> Organizar Cita</button> 
+      </Link>
+       : ''}
       
-      {totalCarrito && botonSeleccionado === 'MercadoPago' &&  <BotonPrueba finalizarCompra={finalizarCompra}   precio={totalCarrito} /> }
+      {totalCarrito && botonSeleccionado === 'MercadoPago' ?  <BotonPrueba finalizarCompra={finalizarCompra}   precio={totalCarrito} /> : '' }
+    
      
       <button className='button-popup2' onClick={handleCerrar}>Volver</button>
       </div>
