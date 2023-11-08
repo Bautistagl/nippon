@@ -10,6 +10,9 @@ const CheckoutScreen = () => {
     const [telefono, setTelefono] =useState('')
     const [metodo,setMetodo] = useState('Correo Argentino GBA')
     const [direccion, setDireccion] = useState('')
+    const [condicion, setCondicion] = useState('')
+    const [persona, setPersona] = useState('')
+    const [entidad, setEntidad] = useState('')
     const [pago,setPago] =useState(false)
     const [usuario,setUsuario] = useState('')
 
@@ -46,8 +49,6 @@ const CheckoutScreen = () => {
         <input onChange={(e)=> setEmail(e.target.value)}/>
         <label> Telefono </label>
         <input onChange={(e)=> setTelefono(e.target.value)}/>
-        <label> Cuit </label>
-        <input onChange={(e)=> setCuit(e.target.value)}/>
         <label> Metodo de envio </label>
         <select
         value={metodo}
@@ -56,8 +57,33 @@ const CheckoutScreen = () => {
             <option value='Correo Argentino GBA'> Correo Argentino GBA</option>
             <option value='Retiro por local'> Retiro por local</option>
         </select>
+        <label> Condición tributaria</label>
+        <select
+        value={condicion}
+        onChange={(e) => setCondicion(e.target.value)}
+        >
+            <option value='Consumidor Final'> Consumidor Final</option>
+            <option value='Monotributista'> Monotributista</option>
+            <option value='Responsable inscripto'> Responsable inscripto</option>
+        </select>
+        {condicion === 'Monotributista' ?
+         <>
+           <label> CUIT/CUIL </label>
+           <input onChange={(e)=> setCuit(e.target.value)}/>
+         </> : ''}
+         {condicion === 'Responsable inscripto' ?
+         <>
+           <label> CUIT/CUIL </label>
+           <input onChange={(e)=> setCuit(e.target.value)}/>
+           <label> Nombre de entidad: </label>
+           <input onChange={(e)=> setEntidad(e.target.value)}/>
+           <label> Tipo de persona </label>
+           <input onChange={(e)=> setPersona(e.target.value)}/>
+         </> : ''}
+        
         <label> Direccion de envio </label>
-        <input onChange={(e)=> setDireccion(e.target.value)}/>
+        {metodo === 'Retiro por local' ? <input disabled value=''/> : <input  onChange={(e)=> setDireccion(e.target.value)}/>}
+  
         <label> Comentarios extras  </label>
         <input/>
         <button className='button-checkout' onClick={()=>handlePago(true)}> Ir al pago </button>

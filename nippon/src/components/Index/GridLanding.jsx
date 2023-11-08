@@ -5,7 +5,7 @@ const GridLanding = () => {
   return (
     <div className='grid-landing'>
         <div className='div1'>
-        <Image style={{marginLeft:'50px',display:'flex',margin:'30px auto'}} width={200} height={60} alt='' src='/logoMarron.png'/> 
+        <Image style={{marginLeft:'50px',display:'flex',margin:'30px auto'}} width={200} height={60} alt='' src='/LogoMarron.png'/> 
         <Image style={{marginLeft:'50px',display:'flex',margin:'10px auto'}} width={150} height={30} alt='' src='/letraMarron.png'/>    
         <span> breath and flow</span>
         <div> Macetas</div>

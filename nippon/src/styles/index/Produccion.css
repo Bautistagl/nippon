@@ -87,18 +87,25 @@
      
 .div2 {
      grid-area: 1 / 2 / 2 / 3; 
-     background-color: #315253;
-     background-image: url('/fotoDiv2.png');
+
+     background-image: url('/origami1.jpg');
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
     }
 .div3 {
      grid-area: 1 / 3 / 3 / 4;
-     background-color: #315253; 
-     background-image: url('/fotoDiv3.png');
+     background-image: url('/sakura1.jpg');
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
     }
 .div4 {
-     grid-area: 2 / 1 / 3 / 3; 
-     background-color: #72dde1;
-     background-image: url('/fotoDiv4.png');
+     grid-area: 2 / 1 / 2 / 3; 
+     background-image: url('/origami2.jpg');
+     background-size: cover;
+     background-position:center;
+     background-repeat: no-repeat;
 }
 
 @media only screen and (max-width: 800px){

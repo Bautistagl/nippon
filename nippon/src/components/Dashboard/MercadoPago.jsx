@@ -58,7 +58,7 @@ import Link from "next/link"
     <div> 
       { url !== null ?
       <Link href={`${url}`}>
-            <button className="button-popup2" onClick={handleSubmit} >
+            <button targer='_blank' className="button-popup2" onClick={handleSubmit} >
 
                 Pagar con mercado pago
             </button>

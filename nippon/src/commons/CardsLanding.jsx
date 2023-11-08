@@ -8,7 +8,7 @@ const CardsLanding = ({producto}) => {
   return (
     <div className='card'>
         <Link target="_blank"  href='https://mecaglass.mercadoshops.com.ar'>
-        <img alt='' src={`/${producto.foto}`} className='card-landing-foto'/>
+        <img alt='' src='fotoProducto.png' className='card-landing-foto'/>
         </Link>
         <div className='info-cards-landing' >
             <h2>   {producto.nombre}  </h2>
