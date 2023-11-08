@@ -67,7 +67,8 @@
   .popupLand{
     position: fixed;
     top:10%;
-    right: 26%;
+    right: 0;
+    left: 0;
     height: 550px;
     width: 40vw;
     background-color:white;
@@ -225,7 +226,13 @@
 
 
   }
-  
+  @media only screen and (max-width:800px) {
+    .popupLand{
+      width: 60vw;
+      right: 0;
+      left: 0;
+    }
+  }
 
   @media only screen and (max-width:600px) {
     .fotos-popup-nippon{
@@ -239,12 +246,24 @@
     .fotos-popup-nippon3{
       width: 160px ;
       height: 50px;
+     
+    }
+    .fotos-popUpLand img{
+      margin: 15px 10px;
+    }
+    .fotos-popUpLand{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
     }
     .button-popupLand{
       font-size: 0.8rem;
     }
     .popupLand{
-      height: 500px;
+      height: 400px;
+      width: 80vw;
+      right: 0;
+      left: 0;
     }
 
   }
@@ -285,6 +304,20 @@
     }
     .button-popup2{
       width: 50vw;
+    }
+  }
+
+  @media only screen and (max-width:450px) {
+    .popupLand{
+      height: 500px;
+    }
+    .fotos-popUpLand{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .fotos-popUpLand img{
+      margin: 15px auto;
     }
   }
  

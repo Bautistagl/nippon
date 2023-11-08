@@ -22,7 +22,7 @@ const handler = async (req, res) => {
         ],
         auto_return: "approved",
         back_urls: {
-          success: 'https://nippon-lemon.vercel.app/dashboard/pagoAceptado',
+          success: 'https://nippon-lemon.vercel.app/dashboard/',
           failure: 'https://nippon-lemon.vercel.app/'
         },
        

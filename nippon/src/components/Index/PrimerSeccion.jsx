@@ -6,7 +6,7 @@ const PrimerSeccion = () => {
     
     <div className='primer-seccion' style={{ display: 'flex', flexDirection: 'column' }}>
     
-        <Image className='icono-primer' style={{marginLeft:'60px',display:'flex',margin:'60px '}} width={220} height={60} alt='' 
+        <Image className='icono-primer'  width={220} height={60} alt='' 
         priority={true} src='/logoBien.png'/>
         <h2> Macetas. Muebles. Decohogar.</h2>
         <h1> Renovación a través de espacios </h1>

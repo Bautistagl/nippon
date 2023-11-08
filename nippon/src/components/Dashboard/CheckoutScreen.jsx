@@ -6,6 +6,7 @@ import Swal from 'sweetalert2'
 const CheckoutScreen = () => {
     const [nombreapellido, setNombreapellido] = useState('')
     const [email, setEmail] =useState('')
+    const [cuit, setCuit] =useState('')
     const [telefono, setTelefono] =useState('')
     const [metodo,setMetodo] = useState('Correo Argentino GBA')
     const [direccion, setDireccion] = useState('')
@@ -45,6 +46,8 @@ const CheckoutScreen = () => {
         <input onChange={(e)=> setEmail(e.target.value)}/>
         <label> Telefono </label>
         <input onChange={(e)=> setTelefono(e.target.value)}/>
+        <label> Cuit </label>
+        <input onChange={(e)=> setCuit(e.target.value)}/>
         <label> Metodo de envio </label>
         <select
         value={metodo}

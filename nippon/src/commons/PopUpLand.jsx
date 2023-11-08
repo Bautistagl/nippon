@@ -29,12 +29,12 @@ const PopUpLand = ({abierto,setAbierto}) => {
           </div>
 
 
-           <Image className='fotos-popup-nippon3' alt='' width={300} height={105} src='/logoMercadoShops.webp'/>
+           <Image className='fotos-popup-nippon3' alt='' width={260} height={85} src='/logoMercadoShops.webp'/>
         </div>
         <div className='textos-popupLand'>
            <h4> También tenemos tienda en Mercado Shops</h4> 
            <span>Mirá nuestro catálogo</span>
-           <Link href='https://mecaglass.mercadoshops.com.ar'>
+           <Link target="_blank"  href='https://mecaglass.mercadoshops.com.ar'>
            <button className='button-popupLand'>Ir a Mercado Shops</button> 
            </Link>
         </div>

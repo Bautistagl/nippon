@@ -23,7 +23,7 @@
 }
 .ul-navbar li{
     display: flex;
-    margin-right: 1vw;
+    margin-right: 3vw;
     font-size: 1.1rem;
     cursor: pointer;
     
@@ -33,7 +33,12 @@
         height: 35px;
 
     }
-.ul-navbar li:hover{
+.ul-navbar  li:hover{
+    color: #DAA666;
+    font-weight: bold;
+}
+.ul-navbar a:hover{
+    color: #DAA666;
     font-weight: bold;
 }
 .navbar button{
@@ -48,11 +53,18 @@
     font-size: 1.1rem;
     cursor: pointer;
 }
-
+@media only screen and (max-width:850px) {
+    .ul-navbar{
+        display: none;
+        margin-left: 0vw;
+       
+    }
+}
 @media only screen and (max-width:800px) {
     .navbar button{
         width: 15vw ;
     }
+  
 }
 
 

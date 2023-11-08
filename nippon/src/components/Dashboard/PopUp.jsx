@@ -129,7 +129,7 @@ const PopUp = ({ usuario,pago,setPago,nombre,email,telefono,envio,direccion }) =
 
   useEffect(()=>{
     updateTotalCarrito()
-    const id = localStorage.getItem('email')
+    const id = localStorage.getItem('emailNippon')
     if(id){
       setUsuario2(id)
       
@@ -190,9 +190,9 @@ const PopUp = ({ usuario,pago,setPago,nombre,email,telefono,envio,direccion }) =
         {botonSeleccionado === 'Transferencia' ||  botonSeleccionado === 'Deposito Bancario' ?
         <div className='datos-banco'>
          
-          <div> CBU: <span>12321321312 </span> </div> 
+          <div> CBU: <span>0000003100162849122434 </span> </div> 
            <div>Alias: <span>nippon.macetas.mp</span></div>
-           <div>Propietario: <span>Mecaglass S.A.</span></div>
+           <div>Titular: <span>MECA GLASS SA</span></div>
            
            <div> Adjuntar comprobante una vez realizada la compra</div>
         </div> : ''
@@ -202,7 +202,7 @@ const PopUp = ({ usuario,pago,setPago,nombre,email,telefono,envio,direccion }) =
       {totalCarrito && botonSeleccionado !== 'MercadoPago' && botonSeleccionado !== 'Efectivo' && botonSeleccionado ? <button className='button-popup2' onClick={()=>{finalizarCompra()}}> Enviar comprobante</button> : ''}
       {totalCarrito && botonSeleccionado === 'Efectivo' && botonSeleccionado ?
       <Link href="https://wa.me/1149277864/?text=Hola que tal, queria arreglar una fecha para pagar en efectivo" target="_blank" rel="noopener noreferrer">
-       <button className='button-popup2'> Organizar Cita</button> 
+       <button className='button-popup2'> Comunicar a fabricante</button> 
       </Link>
        : ''}
       

@@ -16,7 +16,7 @@ const Navbar = ({usuario}) => {
             <li> Catalogo</li>
             <li> <Link href='/decoracion'> Decoracion </Link>  </li>
             
-            <li> <Link href='https://mecaglass.mercadoshops.com.ar'>MercadoShops</Link>  </li>
+            <li>  <Link target="_blank"  href='https://mecaglass.mercadoshops.com.ar'>MercadoShops</Link>  </li>
            
         </ul>
 
