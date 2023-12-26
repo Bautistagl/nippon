@@ -123,7 +123,7 @@ catch (error) {
 
   return (
     <div className='card'>
-        <img alt='' src='/fotoProducto.png'/>
+        <img alt='' src={producto.foto}/>
         <div className='info-cards-landing'>
             <h2>   {producto.nombre}  </h2>
             {producto.ancho ? <span> Ancho: {producto.ancho}  </span> : '' }
