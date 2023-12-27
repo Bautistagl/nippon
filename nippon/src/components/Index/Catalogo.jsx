@@ -1,4 +1,5 @@
 
+import CardsLanding2 from '@/commons/CardsLanding2bautista';
 import CardsLanding from '@/commons/CardsLandingbautista';
 import Cards from '@/commons/Cardsbautista'
 import { db } from '@/firebasebautista';
@@ -8,6 +9,8 @@ import React, { useState } from 'react'
 
 const Catalogo = ({usuario}) => {
   const [catalogData, setCatalogData] = useState([]);
+  const [origami, setOrigami] = useState([]);
+  const [sakura, setSakura] = useState([]);
   const [totalCarrito, setTotalCarrito] = useState(0);
   const [cantidad,setCantidad] =useState(0)
   const [productoCantidad, setProductoCantidad] = useState({
@@ -49,8 +52,8 @@ const Catalogo = ({usuario}) => {
             const productosFiltrados = prodArray.filter(producto => 
               producto.nombre.includes('Sakura')
             );
-           
-            setCatalogData(productosFiltrados);
+            setOrigami([])
+            setSakura(productosFiltrados);
           } else {
             console.log('No se encontraron productos en la rama especificada');
           }
@@ -72,8 +75,8 @@ const Catalogo = ({usuario}) => {
             const productosFiltrados = prodArray.filter(producto => 
               producto.nombre.includes('Origami')
             );
-            
-            setCatalogData(productosFiltrados);
+            setSakura([])
+            setOrigami(productosFiltrados);
           } else {
             console.log('No se encontraron productos en la rama especificada');
           }
@@ -86,6 +89,7 @@ const Catalogo = ({usuario}) => {
     };
   return (
     <div className='contenedor-catalogo'>
+     
       <h1>Productos</h1>
       <span>Selecciona un modelo</span>
       <div className='contenedor-iconos-catalogo' >
@@ -102,13 +106,18 @@ const Catalogo = ({usuario}) => {
       </div>
       <div className='contenedor-cards'>
 
-      {catalogData.map(producto => (
-     
-     <div className='cards-importadas' key={producto.id}> 
-     <CardsLanding producto={producto} />
-  
+      { origami.length > 0  ?  
+     <div className='cards-importadas'> 
+     <CardsLanding producto={origami} />
      </div>
-   ))}
+    : ''}
+
+    { sakura.length > 0 ?  
+     <div className='cards-importadas'> 
+     <CardsLanding2 producto={sakura} />
+     </div>
+    : ''}
+   
       </div>
 
     </div>

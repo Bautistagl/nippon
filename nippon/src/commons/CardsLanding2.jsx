@@ -3,25 +3,26 @@ import { get, ref, remove, update } from 'firebase/database';
 import Link from 'next/link';
 import React, { useState } from 'react'
 
-const CardsLanding = ({producto}) => {
+const CardsLanding2 = ({producto}) => {
   const [selected,setSelected] = useState({})
   
   return (
     <div className='card'>
-      
+  
         <Link target="_blank"  href='https://mecaglass.mercadoshops.com.ar'>
         <img alt='' src={producto[0].foto} className='card-landing-foto'/>
         </Link>
         <div className='info-cards-landing' >
-            <h2>   Origami  </h2> 
+            <h2>   Sakura  </h2> 
             <div className='container-flex'>
 
-            <button onClick={()=>setSelected(producto[0])}>55 </button>
-            <button onClick={()=>setSelected(producto[1])}>60</button>
-            <button onClick={()=>setSelected(producto[2])}>92</button> 
+            <button onClick={()=>setSelected(producto[1])}>32 </button>
+            <button onClick={()=>setSelected(producto[2])}>48</button>
+            <button onClick={()=>setSelected(producto[3])}>64</button> 
+            <button onClick={()=>setSelected(producto[0])}>100</button> 
             </div>
-            {selected.ancho ? <span> Ancho: {selected.ancho}  </span> : '' }
             
+           <span> Ancho: {selected.ancho}  </span> 
             <span> Base(largo):{selected.largo} </span>
             <span> Altura: {selected.alto} </span>
             <span> Capacidad: 100dm3</span>
@@ -32,4 +33,4 @@ const CardsLanding = ({producto}) => {
   )
 }
 
-export default CardsLanding
+export default CardsLanding2
