@@ -5,15 +5,22 @@ import React, { useState } from 'react'
 
 const CardsLanding = ({producto}) => {
   const [selected,setSelected] = useState({})
+  const [color,setColor] = useState('crema')
   
   return (
     <div className='card'>
       
         <Link target="_blank"  href='https://mecaglass.mercadoshops.com.ar'>
-        <img alt='' src={producto[0].foto} className='card-landing-foto'/>
+        <img alt='' src={producto[0][color]} className='card-landing-foto'/>
+        
         </Link>
         <div className='info-cards-landing' >
             <h2>   Origami  </h2> 
+            <div className="circle-container">
+    <div onClick={()=>{setColor('crema')}} className="circle blue"></div>
+    <div onClick={()=>{setColor('oxido')}} className="circle red"></div>
+   
+  </div>
             <div className='container-flex'>
 
             <button onClick={()=>setSelected(producto[0])}>55 </button>

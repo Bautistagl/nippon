@@ -6,6 +6,7 @@ import Swal from 'sweetalert2'
 const Cards = ({producto,usuario}) => {
   const [totalCarrito, setTotalCarrito] = useState(0);
   const [cantidad,setCantidad] =useState(0)
+  const [color,setColor] = useState('crema')
   const [productoCantidad, setProductoCantidad] = useState({
     'Sakura 32':0,
     'Sakura 48':0,
@@ -123,7 +124,7 @@ catch (error) {
 
   return (
     <div className='card'>
-        <img alt='' src={producto.foto}/>
+        <img alt='' src={producto[color]}/>
         <div className='info-cards-landing'>
             <h2>   {producto.nombre}  </h2>
             {producto.ancho ? <span> Ancho: {producto.ancho}  </span> : '' }
@@ -133,11 +134,9 @@ catch (error) {
             <span> Capacidad: 100dm3</span>
         </div>
         <div className="circle-container">
-    <div className="circle blue"></div>
-    <div className="circle red"></div>
-    <div className="circle green"></div>
-    <div className="circle yellow"></div>
-    <div className="circle orange"></div>
+    <div onClick={()=>{setColor('crema')}} className="circle blue"></div>
+    <div onClick={()=>{setColor('oxido')}} className="circle red"></div>
+   
   </div>
         <div className='botonera-cantidad'>
 
