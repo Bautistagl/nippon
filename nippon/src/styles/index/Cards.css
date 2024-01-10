@@ -127,28 +127,34 @@
     height: 20px; /* Ajusta el tamaño según tus preferencias */
     border-radius: 100%;
     border: 2px solid white;
+    
     margin: 2px 2px;
     cursor: pointer;
   }
   
   .blue {
-    background-color: wheat;
+    background-image: url('/CirCrema.png');
+    background-size: cover;
   }
   
   .red {
-    background-color: brown;
+    background-image: url('/CirOxido.png');
+    background-size: cover;
   }
   
   .green {
-    background-color: rgb(255, 255, 255);
+    background-image: url('/CirBlanco.png');
+    background-size: cover;
   }
   
   .yellow {
-    background-color: rgb(93, 27, 27);
+    background-image: url('/CirMarron.png');
+    background-size: cover;
   }
   
   .orange {
-    background-color: rgb(0, 0, 0);
+    background-image: url('/CirNegro.png');
+    background-size: cover;
   }
 
   .botones-landing{
