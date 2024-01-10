@@ -134,8 +134,11 @@ catch (error) {
             <span> Capacidad: 100dm3</span>
         </div>
         <div className="circle-container">
-    <div onClick={()=>{setColor('crema')}} className="circle blue"></div>
+        <div onClick={()=>{setColor('crema')}} className="circle blue"></div>
     <div onClick={()=>{setColor('oxido')}} className="circle red"></div>
+    <div onClick={()=>{setColor('blanco')}} className="circle green"></div>
+    <div onClick={()=>{setColor('marron')}} className="circle yellow"></div>
+    <div onClick={()=>{setColor('negro')}} className="circle orange"></div>
    
   </div>
         <div className='botonera-cantidad'>

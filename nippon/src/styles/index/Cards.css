@@ -51,12 +51,14 @@
 .info-cards-landing{
     display: flex;
     flex-direction: column;
-    margin-left: 30px;
-    margin-bottom: 10px;
-    margin: auto;
+   
+
+    margin: auto !important;
 }
 .info-cards-landing button{
-    border-radius: 100% !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
     margin: 5px;
 }
 
@@ -117,14 +119,15 @@
     justify-content: space-between;
     margin: auto;
     margin-top: 10px;
-    width: 80%;
+   
   }
   
   .circle {
-    width: 1.5vw; /* Ajusta el tamaño según tus preferencias */
-    height: 1.5vw; /* Ajusta el tamaño según tus preferencias */
-    border-radius: 50%;
+    width: 20px; /* Ajusta el tamaño según tus preferencias */
+    height: 20px; /* Ajusta el tamaño según tus preferencias */
+    border-radius: 100%;
     border: 2px solid white;
+    margin: 2px 2px;
     cursor: pointer;
   }
   
@@ -137,15 +140,20 @@
   }
   
   .green {
-    background-color: rgb(93, 27, 27);
+    background-color: rgb(255, 255, 255);
   }
   
   .yellow {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(93, 27, 27);
   }
   
   .orange {
     background-color: rgb(0, 0, 0);
+  }
+
+  .botones-landing{
+    display: flex;
+    margin: auto;
   }
 @media only screen and (max-width:1260px){
     .contenedor-cards{

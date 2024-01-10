@@ -19,12 +19,12 @@ const CardsLanding = ({producto}) => {
             <div className="circle-container">
     <div onClick={()=>{setColor('crema')}} className="circle blue"></div>
     <div onClick={()=>{setColor('oxido')}} className="circle red"></div>
-    <div onClick={()=>{setColor('blanco')}} className="circle green"></div>
     <div onClick={()=>{setColor('marron')}} className="circle yellow"></div>
+    <div onClick={()=>{setColor('blanco')}} className="circle green"></div>
     <div onClick={()=>{setColor('negro')}} className="circle orange"></div>
    
   </div>
-            <div className='container-flex'>
+            <div className='botones-landing'>
 
             <button onClick={()=>setSelected(producto[0])}>55 </button>
             <button onClick={()=>setSelected(producto[1])}>60</button>
