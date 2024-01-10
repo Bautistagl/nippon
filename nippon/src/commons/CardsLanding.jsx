@@ -11,7 +11,7 @@ const CardsLanding = ({producto}) => {
     <div className='card'>
       
         <Link target="_blank"  href='https://mecaglass.mercadoshops.com.ar'>
-        <img alt='' src={producto[0][color]} className='card-landing-foto'/>
+        <img alt='' src={`/${producto[0][color]}`} className='card-landing-foto'/>
         
         </Link>
         <div className='info-cards-landing' >
