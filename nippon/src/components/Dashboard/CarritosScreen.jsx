@@ -87,9 +87,10 @@ const CarritosScreen = ({ usuario, productos }) => {
      
 
       <ul className='ul-pedidos'>
-        {catalogData.map((productos, index) => (
-           <div key={index} className='card2'>
-           <Image alt='' src='/fotoEjemplo.png' width={80} height={80}/>
+        {catalogData.map((productos, index) => (  
+          <div key={index} className='card2'>
+             
+           <Image alt='' src={ productos.nombre.includes('Sakura') ? `/${productos.color}S.jpg` : `/${productos.color}O.jpg` } width={80} height={80}/>
 
           <li className='li-prueba-carrito' >
             <div style={{display:'flex',flexDirection:'column'}}>  

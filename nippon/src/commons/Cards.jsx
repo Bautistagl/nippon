@@ -88,6 +88,7 @@ const Cards = ({producto,usuario}) => {
           alto: producto.alto,
           capacidad: producto.capacidad,
           largo: producto.largo,
+          color:color,
           precio: producto.precio,
           cantidad,
        
@@ -124,7 +125,7 @@ catch (error) {
 
   return (
     <div className='card'>
-        <img alt='' src={producto[color]}/>
+        <img alt='' src={`/${producto[color]}`}/>
         <div className='info-cards-landing'>
             <h2>   {producto.nombre}  </h2>
             {producto.ancho ? <span> Ancho: {producto.ancho}  </span> : '' }

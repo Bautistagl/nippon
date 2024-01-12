@@ -38,7 +38,8 @@ const DetallesPedido = ({ pedido, onClose }) => {
       <ul className='ul-pedidos2'>
         {pedido.productos.map((producto, index) => (
             <div key={index} style={{display:'flex',marginTop:'2%'}}> 
-            <Image alt='' src='/fotoEjemplo.png' height={60} width={60}/>
+            
+            <Image alt='' src={producto.nombre.includes('Sakura') ? `/${producto.color}S.jpg` : `/${producto.color}O.jpg` } height={60} width={60}/>
           <div className='producto-detalle-pedido' >
             <h4> {producto.nombre}</h4>
             <div style={{display:'flex'}}>
